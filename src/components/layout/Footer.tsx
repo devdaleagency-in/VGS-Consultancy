@@ -6,12 +6,12 @@ import Image from 'next/image';
 
 const footerLinks = {
   services: [
-    { name: 'Course Selection', href: '/services/course-selection' },
-    { name: 'University Shortlisting', href: '/services/university-shortlisting' },
-    { name: 'Application Support', href: '/services/application-support' },
-    { name: 'Scholarship Guidance', href: '/services/scholarship-guidance' },
-    { name: 'Visa Assistance', href: '/services/visa-assistance' },
-    { name: 'Post-Arrival Support', href: '/services/post-arrival-support' },
+    { name: 'Course Selection', href: '/services#course-selection' },
+    { name: 'University Shortlisting', href: '/services#university-shortlisting' },
+    { name: 'Application Support', href: '/services#application-support' },
+    { name: 'Scholarship Guidance', href: '/services#scholarship-guidance' },
+    { name: 'Visa Assistance', href: '/services#visa-assistance' },
+    { name: 'Post-Arrival Support', href: '/services#post-arrival-support' },
   ],
   destinations: [
     { name: 'United Kingdom', href: '/destinations/uk' },
