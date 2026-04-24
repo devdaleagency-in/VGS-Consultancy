@@ -1,0 +1,118 @@
+{
+  "videoTestimonials": [
+    {
+      "id": 1,
+      "name": "Naveen Vadla",
+      "destination": "UK - Masters in CS (AI & ML)",
+      "thumbnail": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800",
+      "quote": "VGS Global made my dream of studying in the UK a reality.",
+      "videoUrl": "/uploads/1777006979507-Video_Feedback_For_VGS_Global_Consultancy.mp4"
+    },
+    {
+      "id": 2,
+      "name": "manisha",
+      "destination": "USA - MBA",
+      "thumbnail": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
+      "quote": "Expert guidance and perfect university shortlisting.",
+      "videoUrl": "/uploads/1777006646868-Demo_Video_for_Consultancy_Services.mp4"
+    },
+    {
+      "id": 3,
+      "name": "Ganesh",
+      "destination": "Canada - Data Science",
+      "thumbnail": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+      "quote": "The visa support was incredible. Precision handling.",
+      "videoUrl": ""
+    },
+    {
+      "id": 4,
+      "name": "Anjali Gupta",
+      "destination": "Australia - Nursing",
+      "thumbnail": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+      "quote": "Smooth process from start to finish. Highly recommended.",
+      "videoUrl": ""
+    },
+    {
+      "id": 5,
+      "name": "Kevin George",
+      "destination": "Ireland - Data Analytics",
+      "thumbnail": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800",
+      "quote": "Found the best university in Dublin with VGS guidance.",
+      "videoUrl": "/uploads/1777008667764-VGS-Global-Consultancy---Your-UK-Dream_720p.mp4"
+    },
+    {
+      "id": 6,
+      "name": "Sanya Mirza",
+      "destination": "Germany - MS Robotics",
+      "thumbnail": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
+      "quote": "The APS support was crucial for my Germany visa.",
+      "videoUrl": ""
+    }
+  ],
+  "successStories": [
+    {
+      "name": "Sneha Reddy",
+      "university": "University of Manchester",
+      "course": "MSc Data Science",
+      "message": "The team at VGS Global provided end-to-end support. From SOP drafting to visa interview preparation, everything was handled professionally. I am now pursuing my dream course in the UK.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+      "date": "Sept 2024 Intake"
+    },
+    {
+      "name": "Kiran Kumar",
+      "university": "Arizona State University",
+      "course": "MS in Engineering",
+      "message": "I was confused about university selection, but VGS helped me find the perfect fit for my profile. Their expertise in USA visas is unmatched. Highly recommend!",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+      "date": "Aug 2024 Intake"
+    },
+    {
+      "name": "Ananya Singh",
+      "university": "Trinity College Dublin",
+      "course": "MSc International Business",
+      "message": "VGS Global is truly beyond boundaries. They helped me with my Ireland application and even guided me on scholarships. I secured a 50% scholarship thanks to them!",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
+      "date": "Jan 2024 Intake"
+    },
+    {
+      "name": "Vikram Malhotra",
+      "university": "Technical University of Munich",
+      "course": "MS in Robotics",
+      "message": "Free education in Germany seemed complex, but VGS made it simple. They guided me through the APS process and Blocked Account setup perfectly.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+      "date": "Oct 2023 Intake"
+    },
+    {
+      "name": "Meera Nair",
+      "university": "Monash University",
+      "course": "Master of Public Health",
+      "message": "Studying in Australia was always my dream. VGS helped me with the GTE requirements and ensured my visa was approved in record time. Excellent service!",
+      "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=400",
+      "date": "July 2024 Intake"
+    },
+    {
+      "name": "Arjun Das",
+      "university": "HEC Paris",
+      "course": "Master in Management",
+      "message": "I applied to top-tier B-schools in France and VGS was instrumental in my success. Their SOP reviews are world-class. Truly experts in their field.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
+      "date": "Sept 2024 Intake"
+    },
+    {
+      "name": "Siddharth Rao",
+      "university": "University of Auckland",
+      "course": "MSc Biotechnology",
+      "message": "New Zealand's visa process is detailed, but VGS Global made it stress-free. Their post-arrival support guidance was also very helpful for a new student like me.",
+      "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=400",
+      "date": "Feb 2024 Intake"
+    },
+    {
+      "name": "Pooja Hegde",
+      "university": "King's College London",
+      "course": "LLM International Law",
+      "message": "The expertise of Vineetha and her team is incredible. They understood my specific needs for a law degree in the UK and handled everything with care.",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400",
+      "date": "Sept 2024 Intake"
+    }
+  ]
+}

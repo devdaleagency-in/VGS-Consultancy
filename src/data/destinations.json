@@ -1,0 +1,98 @@
+{
+  "uk": {
+    "name": "United Kingdom",
+    "fullName": "Study in the UK",
+    "banner": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=2000",
+    "description": "The UK is home to some of the world's oldest and most prestigious universities. With a rich academic heritage and diverse culture, the UK offers an unparalleled educational experience.",
+    "stats": [
+      { "label": "Universities", "value": "150+" },
+      { "label": "Intakes", "value": "Sept / Jan" },
+      { "label": "Post-study Work", "value": "2 Years" },
+      { "label": "Success Rate", "value": "98%" }
+    ],
+    "features": [
+      "Top-tier Global Rankings",
+      "One-year Masters Programs",
+      "Rich Cultural Heritage",
+      "Generous Scholarship Options"
+    ],
+    "programs": [
+      { "title": "Business & Management", "level": "Undergraduate & Graduate" },
+      { "title": "Computer Science & AI", "level": "Graduate Research" },
+      { "title": "Healthcare & Medicine", "level": "Professional Degrees" },
+      { "title": "Engineering & Tech", "level": "Hands-on Innovation" }
+    ]
+  },
+  "usa": {
+    "name": "United States",
+    "fullName": "Study in the USA",
+    "banner": "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&q=80&w=2000",
+    "description": "The United States is a global leader in higher education, offering a vast array of programs and research opportunities at world-renowned institutions.",
+    "stats": [
+      { "label": "Universities", "value": "4000+" },
+      { "label": "Intakes", "value": "Aug / Jan" },
+      { "label": "STEM OPT", "value": "3 Years" },
+      { "label": "Success Rate", "value": "95%" }
+    ],
+    "features": [
+      "Ivy League Institutions",
+      "Cutting-edge Research",
+      "Flexible Curriculum",
+      "Diverse Networking"
+    ],
+    "programs": [
+      { "title": "Tech & Silicon Valley", "level": "Graduate Tech" },
+      { "title": "MBA & Finance", "level": "Elite Business" },
+      { "title": "Biotechnology", "level": "Research Lab" },
+      { "title": "Media & Arts", "level": "Creative Industry" }
+    ]
+  },
+  "canada": {
+    "name": "Canada",
+    "fullName": "Study in Canada",
+    "banner": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=2000",
+    "description": "Canada is known for its high-quality education, safe environment, and excellent post-graduation work opportunities and immigration pathways.",
+    "stats": [
+      { "label": "Colleges", "value": "100+" },
+      { "label": "Intakes", "value": "Sept / Jan / May" },
+      { "label": "PGWP", "value": "Up to 3 Years" },
+      { "label": "Success Rate", "value": "94%" }
+    ],
+    "features": [
+      "Permanent Residency Paths",
+      "Affordable Tuition",
+      "Safe & Welcoming Culture",
+      "High Living Standards"
+    ],
+    "programs": [
+      { "title": "Hospitality & Tourism", "level": "Applied Arts" },
+      { "title": "Data Science", "level": "Advanced Tech" },
+      { "title": "Environmental Science", "level": "Sustainable Dev" },
+      { "title": "Supply Chain", "level": "Logistics Expert" }
+    ]
+  },
+  "germany": {
+    "name": "Germany",
+    "fullName": "Study in Germany",
+    "banner": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=2000",
+    "description": "Germany offers world-class education with little to no tuition fees at public universities, making it a top choice for international students.",
+    "stats": [
+      { "label": "Public Unis", "value": "300+" },
+      { "label": "Intakes", "value": "Oct / April" },
+      { "label": "Job Search Visa", "value": "18 Months" },
+      { "label": "Success Rate", "value": "97%" }
+    ],
+    "features": [
+      "Zero Tuition Fees",
+      "Strong Industrial Ties",
+      "Central European Location",
+      "High Tech Innovation"
+    ],
+    "programs": [
+      { "title": "Automotive Engineering", "level": "Advanced Engineering" },
+      { "title": "Industrial Design", "level": "Modern Arts" },
+      { "title": "Green Energy", "level": "Sustainable Tech" },
+      { "title": "Robotics", "level": "Automation Research" }
+    ]
+  }
+}
