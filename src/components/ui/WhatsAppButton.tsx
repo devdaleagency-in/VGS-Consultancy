@@ -5,7 +5,7 @@ import MagneticButton from './MagneticButton';
 
 export default function WhatsAppButton() {
   return (
-    <div className="fixed bottom-10 right-10 z-[100]">
+    <div className="fixed bottom-10 right-10 z-[100] hidden md:block">
       <MagneticButton strength={0.4}>
         <motion.a
           href="https://wa.me/918096832850?text=Hi%20VGS%20Global!%20I'm%20interested%20in%20studying%20abroad.%20Can%20you%20help%20me?"

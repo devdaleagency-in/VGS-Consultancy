@@ -8,37 +8,37 @@ const services = [
     icon: "🎯",
     title: "Course Selection",
     description: "Expert guidance on selecting the perfect program matching your profile, interests, and career goals.",
-    link: "/services/course-selection"
+    link: "/services#course-selection"
   },
   {
     icon: "🏛️",
     title: "University Shortlisting",
     description: "Data-driven recommendations to help you target prestigious universities where you have the highest success chance.",
-    link: "/services/university-shortlisting"
+    link: "/services#university-shortlisting"
   },
   {
     icon: "📝",
     title: "Application Support",
     description: "End-to-end assistance with admissions, including SOP review, document preparation, and form submission.",
-    link: "/services/application-support"
+    link: "/services#application-support"
   },
   {
     icon: "💰",
     title: "Scholarship Guidance",
     description: "Personalized search for funding opportunities and bursaries to maximize your financial support.",
-    link: "/services/scholarship-guidance"
+    link: "/services#scholarship-guidance"
   },
   {
     icon: "🛂",
     title: "Visa Assistance",
     description: "Expert visa counseling and document verification with a stellar 98% success rate across all countries.",
-    link: "/services/visa-assistance"
+    link: "/services#visa-assistance"
   },
   {
     icon: "🏠",
     title: "Post-Arrival Support",
     description: "Assistance with accommodation, airport pickups, and local orientation to ensure a smooth transition.",
-    link: "/services/post-arrival-support"
+    link: "/services#post-arrival-support"
   }
 ];
 

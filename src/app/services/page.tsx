@@ -72,11 +72,12 @@ export default function ServicesPage() {
             {services.map((service, i) => (
               <motion.div
                 key={i}
+                id={service.title.toLowerCase().replace(/\s+/g, '-')}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className={`flex flex-col lg:items-center gap-12 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                className={`flex flex-col lg:items-center gap-12 pt-20 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
               >
                 {/* Visual */}
                 <div className="w-full lg:w-1/2">
