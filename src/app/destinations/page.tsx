@@ -9,7 +9,7 @@ const destinations = [
     name: "United Kingdom",
     fullName: "England, Scotland, Wales & NI",
     flag: "🇬🇧",
-    accent: "#003366",
+    accent: "#2563EB",
     desc: "Home to world-renowned universities like Oxford and Cambridge, offering 1-year Masters and post-study work visas.",
     benefits: ["1 Year Masters", "Post Study Work", "Research Excellence"],
     image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800"

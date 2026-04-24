@@ -43,9 +43,9 @@ export default function TextReveal({ text, className = "", delay = 0 }: TextReve
   }, [delay]);
 
   return (
-    <div ref={containerRef} className={`flex flex-wrap overflow-hidden ${className}`}>
+    <div ref={containerRef} className={`flex flex-wrap ${className}`}>
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden mr-[0.2em] py-[0.1em]">
+        <span key={i} className="inline-block overflow-hidden mr-[0.1em] py-[0.15em] pr-[0.15em] pl-[0.05em] -my-[0.15em]">
           <span className="word-inner inline-block transform">
             {word}
           </span>

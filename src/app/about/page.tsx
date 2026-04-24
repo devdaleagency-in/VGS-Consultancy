@@ -77,13 +77,12 @@ export default function AboutPage() {
         </motion.div>
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-block px-6 py-2 rounded-full border border-primary/20 text-primary font-black text-[10px] tracking-[0.5em] uppercase mb-8"
           >
-            Trusted Since 2014
-          </motion.div>
+          </motion.div> */}
           
           <h1 className="text-4xl sm:text-6xl md:text-[9vw] font-heading font-black text-dark leading-[0.9] tracking-tighter uppercase">
             Our <span className="text-primary italic font-accent lowercase tracking-normal">Story.</span>
@@ -114,19 +113,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Legitimacy: Accreditations Marquee */}
-      <section className="py-20 bg-gray-50/50 mt-24">
-        <div className="max-w-7xl mx-auto px-6">
-           <p className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-dark/30 mb-12">Global Recognition & Accreditations</p>
-           <div className="flex flex-wrap justify-center gap-10 md:gap-20 opacity-40 grayscale group hover:grayscale-0 transition-all">
-              {accreditations.map((brand: any, i: number) => (
-                <div key={i} className="text-xl font-heading font-black text-dark hover:text-primary transition-colors cursor-default">
-                   {brand}
-                </div>
-              ))}
-           </div>
-        </div>
-      </section>
+
 
       {/* Core Mission Section - Logo & Content */}
       <section className="py-32 px-6">
@@ -143,7 +130,7 @@ export default function AboutPage() {
           </div>
           <div className="flex-1 flex flex-col justify-center py-10">
              <span className="text-primary font-black text-[10px] uppercase tracking-[0.3em] mb-6 block">Our Commitment</span>
-             <h2 className="text-4xl md:text-6xl font-heading font-black text-dark tracking-tighter leading-tight mb-8">Guided by <span className="text-primary italic font-accent lowercase tracking-normal">Integrity.</span></h2>
+             <h2 className="text-4xl md:text-6xl font-heading font-black text-dark tracking-tighter leading-tight mb-8">Guided by <span className="text-primary italic font-accent tracking-normal">Integrity.</span></h2>
              <p className="text-dark/50 text-lg font-medium leading-relaxed mb-10">
                 At VGS Global, we don't just process applications; we architect careers. Our mission is to provide every student with the most transparent and effective pathway to their global academic dreams.
              </p>
@@ -221,7 +208,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
           <div>
             <h2 className="text-4xl md:text-6xl font-heading font-black tracking-tight mb-6 md:mb-8">Our Global <br /> Network.</h2>
-            <p className="text-white/50 text-base md:text-lg font-medium leading-relaxed mb-10 md:mb-12">We maintain direct partnerships with over 500+ top-tier institutions across the most sought-after study destinations.</p>
+            <p className="text-white/50 text-base md:text-lg font-medium leading-relaxed mb-10 md:mb-12">We maintain direct partnerships with over 50+ top-tier institutions across the most sought-after study destinations.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
               {["United Kingdom", "United States", "Canada", "Ireland", "Germany", "France", "New Zealand", "Australia"].map((country: string, i: number) => (
                 <div key={i} className="flex items-center gap-3 py-1 border-b border-white/5 sm:border-none">
@@ -232,7 +219,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="relative aspect-square sm:aspect-video lg:aspect-auto h-[300px] md:h-[400px] bg-white/5 rounded-[2rem] md:rounded-[3rem] border border-white/10 flex flex-col items-center justify-center text-center p-8 md:p-10 group">
-             <div className="text-6xl md:text-7xl font-heading font-black text-accent-gold mb-4 group-hover:scale-110 transition-transform">98%</div>
+             <div className="text-6xl md:text-7xl font-heading font-black text-accent-gold mb-4 group-hover:scale-110 transition-transform">97%</div>
              <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-white/40">Visa Approval Success</p>
              <div className="mt-8 md:mt-12 w-full max-w-xs h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <motion.div 
@@ -250,7 +237,7 @@ export default function AboutPage() {
       <section className="py-40 text-center px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-7xl font-heading font-black text-dark tracking-tighter leading-none mb-10">
-            Let's build your <br /> <span className="text-primary italic font-accent lowercase tracking-normal">Global Future.</span>
+            Let's build your <br /> <span className="text-primary italic font-accent tracking-normal">Global Future.</span>
           </h2>
           <Link 
             href="/contact?type=Student" 

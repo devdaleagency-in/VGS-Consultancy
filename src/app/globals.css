@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #003366;
-  --color-primary-dark: #001a33;
-  --color-primary-light: #004080;
-  --color-primary-50: #e6f2ff;
-  --color-primary-100: #cce5ff;
-  --color-primary-200: #99ccff;
-  --color-primary-300: #66b2ff;
-  --color-primary-400: #3399ff;
-  --color-primary-500: #003366;
-  --color-primary-600: #002b57;
-  --color-primary-700: #002447;
-  --color-primary-800: #001c38;
-  --color-primary-900: #001529;
+  --color-primary: #2563EB;
+  --color-primary-dark: #1E40AF;
+  --color-primary-light: #60A5FA;
+  --color-primary-50: #EFF6FF;
+  --color-primary-100: #DBEAFE;
+  --color-primary-200: #BFDBFE;
+  --color-primary-300: #93C5FD;
+  --color-primary-400: #60A5FA;
+  --color-primary-500: #3B82F6;
+  --color-primary-600: #2563EB;
+  --color-primary-700: #1D4ED8;
+  --color-primary-800: #1E40AF;
+  --color-primary-900: #1E3A8A;
 
-  --color-accent-blue: #003366;
+  --color-accent-blue: #2563EB;
   --color-accent-gold: #D4AF37;
-  --color-accent-coral: #003366;
+  --color-accent-coral: #2563EB;
 
   --color-dark: #212529;
   --color-dark-light: #343A40;
@@ -115,25 +115,43 @@ body {
   background-size: 30px 30px;
 }
 
-/* Glass-morphic Navbar Pill */
-.nav-pill {
-  background: rgba(33, 37, 41, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* iOS 26 Liquid Glass Navbar */
+.nav-liquid-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(35px) saturate(210%);
+  -webkit-backdrop-filter: blur(35px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 1),
+    inset 0 2px 10px rgba(255, 255, 255, 0.8);
   border-radius: 100px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Reference Image Card Styles */
-.modern-card-green {
-  background-color: #e6f2ff; /* Soft Blue */
+.nav-liquid-glass-scrolled {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1.5rem !important;
+  margin-top: -1rem;
+  scale: 0.95;
 }
 
-.modern-card-peach {
-  background-color: #faf3e0; /* Soft Gold/Cream */
+/* Enhanced Premium Card Styles */
+.modern-card-blue {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%);
+  border: 1px solid rgba(37, 99, 235, 0.1) !important;
 }
 
-.modern-card-purple {
-  background-color: #f8f9fa; /* Soft Silver */
+.modern-card-gold {
+  background: linear-gradient(135deg, #fffaf0 0%, #fff4e0 100%);
+  border: 1px solid rgba(212, 175, 55, 0.1) !important;
+}
+
+.modern-card-silver {
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .logo-marquee {

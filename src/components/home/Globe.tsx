@@ -62,7 +62,7 @@ function Earth() {
       {/* Atmospheric Fresnel Effect Layer (Blue Glow) */}
       <Sphere args={[2.5, 64, 64]}>
         <meshPhongMaterial
-          color="#88ccff"
+          color="#BFDBFE"
           transparent
           opacity={0.1}
           side={THREE.BackSide}
@@ -73,7 +73,7 @@ function Earth() {
       {/* Outer Halo */}
       <Sphere args={[2.6, 64, 64]}>
         <meshBasicMaterial
-          color="#4488ff"
+          color="#3B82F6"
           transparent
           opacity={0.03}
           side={THREE.BackSide}
@@ -91,7 +91,7 @@ export default function Globe() {
         <ambientLight intensity={0.2} />
         {/* Sun light simulating space lighting */}
         <directionalLight position={[5, 3, 5]} intensity={2.5} color="#ffffff" />
-        <pointLight position={[-5, -3, -5]} intensity={0.5} color="#4488ff" />
+        <pointLight position={[-5, -3, -5]} intensity={0.5} color="#3B82F6" />
         
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
         

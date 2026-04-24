@@ -165,7 +165,7 @@ const container = {
 };
 
 const header = {
-  backgroundColor: '#003366',
+  backgroundColor: '#2563EB',
   padding: '30px',
   textAlign: 'center' as const,
 };
@@ -213,7 +213,7 @@ const infoCard = {
 };
 
 const sectionTitle = {
-  color: '#003366',
+  color: '#2563EB',
   fontSize: '12px',
   fontWeight: 'bold',
   letterSpacing: '1px',
@@ -269,7 +269,7 @@ const messageText = {
 };
 
 const button = {
-  backgroundColor: '#003366',
+  backgroundColor: '#2563EB',
   borderRadius: '6px',
   color: '#ffffff',
   fontSize: '16px',

@@ -78,12 +78,12 @@ export default function SuccessStoriesPage() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-block px-6 py-2 rounded-full border border-primary/20 text-primary font-black text-[10px] tracking-[0.5em] uppercase mb-10"
           >
-            2000+ Success Stories
+            50+ Success Stories
           </motion.div>
           
           <h1 className="text-4xl sm:text-6xl md:text-[8vw] lg:text-[9rem] font-heading font-black text-dark leading-[0.8] tracking-tighter uppercase mb-12">
             Real Stories. <br />
-            <span className="text-primary italic font-accent lowercase tracking-normal">Real success.</span>
+            <span className="text-primary italic font-accent capitalize  tracking-normal">Real success.</span>
           </h1>
           
           <p className="max-w-2xl mx-auto text-xl text-dark/50 font-medium leading-relaxed">
@@ -98,7 +98,7 @@ export default function SuccessStoriesPage() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-xl">
               <span className="text-primary font-black text-[10px] uppercase tracking-[0.3em] mb-4 block">Video Feedbacks</span>
-              <h2 className="text-5xl md:text-7xl font-heading font-black text-dark tracking-tighter leading-none">Experience <br /> their journey.</h2>
+              <h2 className="text-5xl md:text-7xl font-heading font-black text-dark tracking-tighter leading-none">Experience <br /> Their journey.</h2>
             </div>
           </div>
 
@@ -220,11 +220,11 @@ export default function SuccessStoriesPage() {
       <section className="py-20 md:py-40 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-20">
           <div className="text-center">
-             <div className="text-5xl md:text-7xl font-heading font-black text-primary mb-4">98%</div>
+             <div className="text-5xl md:text-7xl font-heading font-black text-primary mb-4">97%</div>
              <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-dark/30">Visa Success Rate</p>
           </div>
           <div className="text-center">
-             <div className="text-5xl md:text-7xl font-heading font-black text-accent-gold mb-4">2000+</div>
+             <div className="text-5xl md:text-7xl font-heading font-black text-accent-gold mb-4">50+</div>
              <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-dark/30">Successful Placements</p>
           </div>
           <div className="text-center">

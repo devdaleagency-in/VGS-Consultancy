@@ -19,9 +19,10 @@ interface VisaPageProps {
   stats: { label: string; value: string }[];
   features: string[];
   process: { step: string; title: string; desc: string }[];
+  children?: React.ReactNode;
 }
 
-export default function VisaPageLayout({ title, fullName, banner, description, stats, features, process }: VisaPageProps) {
+export default function VisaPageLayout({ title, fullName, banner, description, stats, features, process, children }: VisaPageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
   const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
@@ -46,9 +47,9 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white overflow-hidden pb-24 font-montserrat">
+    <div ref={containerRef} className="min-h-screen bg-white overflow-hidden pb-0 font-montserrat">
       
-      {/* Hero Section - Matching USA Page */}
+      {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <motion.div 
           style={{ y }}
@@ -92,7 +93,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
         </div>
       </section>
 
-      {/* Stats Section - Matching USA Page */}
+      {/* Stats Section */}
       <section className="stats-section relative z-20 -mt-24 px-6">
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
@@ -111,99 +112,103 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
         </div>
       </section>
 
-      {/* Main Content Split - Matching USA Page */}
+      {/* Main Content Full Width */}
       <section className="py-32 px-6">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div className="max-w-[1200px] mx-auto space-y-32">
           
           {/* Why VGS & Features */}
           <div className="space-y-12">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <h2 className="text-5xl font-heading font-black text-dark mb-10 tracking-tight">Why Choose VGS for your {title}?</h2>
-              <div className="space-y-5">
+              <h2 className="text-5xl md:text-7xl font-heading font-black text-dark mb-12 tracking-tighter">Why Choose VGS for <br/> your {title}?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                 {features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-5 p-6 bg-gray-50/50 rounded-3xl border border-gray-100 hover:border-primary/30 transition-all group">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+                  <div key={i} className="flex items-center gap-6 p-8 bg-gray-50/50 rounded-[2.5rem] border border-gray-100 hover:border-primary/30 transition-all group hover:bg-white hover:shadow-2xl">
+                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
                        ✓
                     </div>
-                    <span className="font-bold text-dark text-lg">{feature}</span>
+                    <span className="font-black text-dark text-xl">{feature}</span>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Application Mini CTA */}
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               className="p-12 bg-dark rounded-[4rem] text-white relative overflow-hidden group shadow-2xl"
-            >
-               <div className="relative z-10">
-                 <h3 className="text-3xl font-heading font-black mb-4 italic">Ready to Apply?</h3>
-                 <p className="text-white/50 mb-10 font-medium text-lg leading-relaxed">Our specialized {title} consultants are standing by to guide you.</p>
-                 <button 
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center gap-5 bg-primary px-10 py-5 rounded-2xl font-black hover:bg-white hover:text-dark transition-all shadow-xl"
-                 >
-                    Apply Now →
-                 </button>
-               </div>
-               <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -mr-40 -mt-40 group-hover:bg-primary/20 transition-all" />
-            </motion.div>
-          </div>
-
-          {/* Process Timeline */}
-          <div className="space-y-10" id="contact-form">
-            <h2 className="text-5xl font-heading font-black text-dark mb-12 tracking-tight">The Journey.</h2>
-            <div className="grid grid-cols-1 gap-6">
-              {process.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all group"
-                >
-                  <div className="flex gap-8 items-start">
-                    <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-2xl font-black text-primary/20 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                      {item.step}
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-black text-dark mb-2">{item.title}</h4>
-                      <p className="text-gray-500 font-medium leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            
-            <div className="pt-16">
-              <VisaContactForm visaType={title} />
-            </div>
+            {children}
           </div>
 
         </div>
       </section>
 
-      {/* Sticky Quick Action - Matching USA Page */}
+      {/* New Footer Contact Section */}
+      <section id="contact-form" className="py-32 px-6 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+            
+            {/* Company Information */}
+            <div className="space-y-16">
+              <div>
+                <img src="/vgs new logo.png" alt="VGS Logo" className="h-24 md:h-32 object-contain mb-10" />
+                <h2 className="text-4xl md:text-5xl font-heading font-black text-dark mb-8 leading-tight">
+                  Your Global Future <br/> Starts <span className="text-primary italic font-accent">Here.</span>
+                </h2>
+                <p className="text-xl text-gray-500 font-medium leading-relaxed max-w-lg">
+                  VGS Consultancy is dedicated to providing world-class guidance for students and professionals looking to expand their horizons. Our expertise ensures your journey is smooth and successful.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-4">Contact Details</h4>
+                  <div className="space-y-4">
+                    <p className="text-lg font-bold text-dark">+1 (234) 567-890</p>
+                    <p className="text-lg font-bold text-dark">info@vgsconsultancy.com</p>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-4">Location</h4>
+                  <p className="text-lg font-bold text-dark">
+                    123 Business Avenue, <br/>
+                    Suite 456, Global City
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                {['FB', 'IG', 'LI', 'TW'].map((social) => (
+                  <div key={social} className="w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center font-black text-xs text-gray-400 hover:bg-primary hover:text-white hover:border-primary transition-all cursor-pointer">
+                    {social}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* The Form */}
+            <div className="bg-white p-12 md:p-16 rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-gray-100">
+              <VisaContactForm visaType={title} />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Sticky Quick Action */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 pointer-events-none"
+        className="fixed bottom-10 right-10 z-50 pointer-events-none"
       >
         <button 
           onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-          className="pointer-events-auto flex items-center gap-4 bg-dark text-white px-10 py-6 rounded-full shadow-[0_30px_100px_rgba(0,0,0,0.3)] border border-white/10 hover:bg-primary transition-all group"
+          className="pointer-events-auto flex items-center gap-4 bg-dark text-white px-8 py-5 rounded-full shadow-[0_30px_100px_rgba(0,0,0,0.3)] border border-white/10 hover:bg-primary transition-all group"
         >
-          <span className="font-heading font-black text-[10px] tracking-[0.4em] uppercase">Start Your {title} Application</span>
-          <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all">
-            <span className="text-2xl">→</span>
+          <span className="font-heading font-black text-[9px] tracking-[0.4em] uppercase whitespace-nowrap">Apply Now</span>
+          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all">
+            <span className="text-xl">→</span>
           </div>
         </button>
       </motion.div>

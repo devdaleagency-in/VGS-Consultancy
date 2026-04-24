@@ -4,12 +4,12 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 const stats = [
-  { value: 500, suffix: "+", label: "Students Placed", sub: "Globally Recognized", size: "lg" },
-  { value: 15, suffix: "+", label: "Countries", sub: "Wide Destination Network", size: "sm" },
-  { value: 98, suffix: "%", label: "Visa Success", sub: "Unmatched Accuracy", size: "md" },
-  { value: 12, suffix: "L+", label: "Avg Scholarship", sub: "Financial Empowerment", size: "md" },
-  { value: 50, suffix: "+", label: "Partner Universities", sub: "Direct Institutional Links", size: "sm" },
-  { value: 10, suffix: "+", label: "Years Experience", sub: "Legacy of Trust", size: "lg" }
+  { value: 50, suffix: "+", label: "Students Placed", sub: "Globally Recognized" },
+  { value: 15, suffix: "+", label: "Countries", sub: "Wide Destination Network" },
+  { value: 98, suffix: "%", label: "Visa Success", sub: "Unmatched Accuracy" },
+  { value: 5, suffix: "L+", label: "Avg Scholarship", sub: "Financial Empowerment" },
+  { value: 50, suffix: "+", label: "Partner Universities", sub: "Direct Institutional Links" },
+  { value: 6, suffix: "+", label: "Years Experience", sub: "Legacy of Trust" }
 ];
 
 function Counter({ value, suffix, duration = 2 }: { value: number, suffix: string, duration?: number }) {
@@ -85,11 +85,11 @@ export default function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9]"
           >
-            Numbers that <br /> <span className="text-primary italic font-accent lowercase tracking-normal">define</span> our legacy.
+            Numbers That <br /> <span className="text-primary italic font-accent capitalize tracking-normal">Define</span> Our Legacy.
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[240px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[240px]">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -97,13 +97,7 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className={`relative group rounded-[2.5rem] p-10 border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent backdrop-blur-sm overflow-hidden flex flex-col justify-between hover:border-primary/30 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/5 ${
-                stat.size === 'lg' ? 'md:col-span-2' : ''
-              } ${
-                i === 0 ? 'lg:col-span-2 lg:row-span-1' : ''
-              } ${
-                i === 5 ? 'lg:col-span-2' : ''
-              }`}
+              className="relative group rounded-[2.5rem] p-10 border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent backdrop-blur-sm overflow-hidden flex flex-col justify-between hover:border-primary/30 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/5"
             >
               {/* Subtle background glow on hover */}
               <div className="absolute -inset-20 bg-primary/0 group-hover:bg-primary/5 rounded-full blur-[80px] transition-all duration-1000" />

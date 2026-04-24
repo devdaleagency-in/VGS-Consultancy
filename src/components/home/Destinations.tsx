@@ -8,7 +8,7 @@ import TextReveal from '@/components/ui/TextReveal';
 const destinations = [
   {
     name: "United Kingdom",
-    flag: "🇬🇧",
+    code: "gb",
     stats: "150+ Universities",
     visa: "98% Success",
     image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800",
@@ -17,7 +17,7 @@ const destinations = [
   },
   {
     name: "United States",
-    flag: "🇺🇸",
+    code: "us",
     stats: "200+ Universities",
     visa: "95% Success",
     image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&q=80&w=800",
@@ -26,7 +26,7 @@ const destinations = [
   },
   {
     name: "Canada",
-    flag: "🇨🇦",
+    code: "ca",
     stats: "100+ Colleges",
     visa: "94% Success",
     image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=800",
@@ -35,7 +35,7 @@ const destinations = [
   },
   {
     name: "Germany",
-    flag: "🇩🇪",
+    code: "de",
     stats: "80+ Universities",
     visa: "97% Success",
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800",
@@ -74,7 +74,7 @@ export default function Destinations() {
             >
               Academic Destinations
             </motion.div>
-            <div className="text-6xl md:text-8xl font-heading font-black text-dark mb-8 tracking-tighter">
+            <div className="text-6xl md:text-8xl font-heading font-black text-dark mb-8 tracking-tight">
               <TextReveal text="Where Will Your" />
               <TextReveal text="Journey Begin?" className="text-primary italic font-accent" delay={0.2} />
             </div>
@@ -184,12 +184,16 @@ function CountryCard({ country, index }: { country: any, index: number }) {
 
       {/* Floating Header Info */}
       <div className="absolute top-8 left-8 md:top-10 md:left-10 flex items-center gap-3">
-         <motion.span 
-           animate={showContent ? { scale: 1.1, y: -5 } : { scale: 1, y: 0 }}
-           className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary flex items-center justify-center text-2xl md:text-3xl shadow-glow relative z-10"
-         >
-            {country.flag}
-         </motion.span>
+          <motion.div 
+            animate={showContent ? { scale: 1.1, y: -5 } : { scale: 1, y: 0 }}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0F172A] flex items-center justify-center p-2.5 shadow-2xl border border-white/10 relative z-10 overflow-hidden"
+          >
+             <img 
+               src={`https://flagcdn.com/w160/${country.code}.png`} 
+               alt={country.name}
+               className="w-full h-full object-contain rounded-sm scale-110" 
+             />
+          </motion.div>
          <div className="flex flex-col">
             <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-white/60">Destination</span>
             <span className="text-white font-black text-xs md:text-sm">{country.tag}</span>

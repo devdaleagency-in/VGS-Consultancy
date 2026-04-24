@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 
 interface ServiceCardProps {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
   link: string;

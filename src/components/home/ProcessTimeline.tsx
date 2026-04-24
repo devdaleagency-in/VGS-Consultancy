@@ -76,7 +76,7 @@ export default function ProcessTimeline() {
           </motion.div>
           <div className="text-4xl md:text-6xl font-heading font-black text-dark">
             <TextReveal text="Our Comprehensive" className="justify-center" />
-            <TextReveal text="Consultation Framework" className="justify-center text-primary italic font-accent" delay={0.2} />
+            <TextReveal text="Framework" className="justify-center text-primary italic font-accent" delay={0.2} />
           </div>
         </div>
 

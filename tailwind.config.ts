@@ -10,25 +10,25 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#003366", // Logo Blue
-          dark: "#001a33",
-          light: "#004080",
-          50: "#e6f2ff",
-          100: "#cce5ff",
-          200: "#99ccff",
-          300: "#66b2ff",
-          400: "#3399ff",
-          500: "#003366",
-          600: "#002b57",
-          700: "#002447",
-          800: "#001c38",
-          900: "#001529",
+          DEFAULT: "#2563EB",
+          dark: "#1E40AF",
+          light: "#60A5FA",
+          50: "#EFF6FF",
+          100: "#DBEAFE",
+          200: "#BFDBFE",
+          300: "#93C5FD",
+          400: "#60A5FA",
+          500: "#3B82F6",
+          600: "#2563EB",
+          700: "#1D4ED8",
+          800: "#1E40AF",
+          900: "#1E3A8A",
         },
         accent: {
-          blue: "#003366",
+          blue: "#2563EB",
           gold: "#D4AF37", // Logo Gold
           silver: "#E5E4E2",
-          coral: "#003366", // Swapped coral for consistency
+          coral: "#2563EB", // Swapped coral for consistency
         },
         dark: {
           DEFAULT: "#212529",
