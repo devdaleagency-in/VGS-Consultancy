@@ -21,8 +21,8 @@ export default function Hero() {
   return (
     <section className="relative w-full pt-32 pb-12 md:pt-40 md:pb-40 grid-bg overflow-x-hidden">
       {/* Background Gradient Blurs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-100/30 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary-100/30 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-100/30 blur-[60px] md:blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary-100/30 blur-[60px] md:blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         

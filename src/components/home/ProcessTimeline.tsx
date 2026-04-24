@@ -107,6 +107,8 @@ function TimelineItem({ step, index }: { step: any, index: number }) {
     offset: ["start 90%", "start 20%"]
   });
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   const x = useTransform(scrollYProgress, [0, 1], [index % 2 === 0 ? -100 : 100, 0]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [index % 2 === 0 ? -10 : 10, 0]);
@@ -120,7 +122,7 @@ function TimelineItem({ step, index }: { step: any, index: number }) {
       <div className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
         {/* Step Card */}
         <motion.div 
-          style={{ x, rotate }}
+          style={isMobile ? { opacity: 1 } : { x, rotate, opacity }}
           className={`flex-1 w-full ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
         >
           <div className={`group p-10 rounded-[3rem] bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden h-full`}>

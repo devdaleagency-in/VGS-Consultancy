@@ -58,7 +58,7 @@ export default function Destinations() {
       {/* Background Parallax Text - Larger and Smoother */}
       <motion.div 
         style={{ x }}
-        className="absolute top-10 whitespace-nowrap text-[25rem] font-black text-gray-100/50 select-none pointer-events-none z-0"
+        className="hidden md:block absolute top-10 whitespace-nowrap text-[25rem] font-black text-gray-100/50 select-none pointer-events-none z-0"
       >
         ADMISSIONS GLOBAL SUCCESS VGS
       </motion.div>
