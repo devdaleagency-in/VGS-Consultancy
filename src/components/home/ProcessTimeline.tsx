@@ -101,54 +101,41 @@ export default function ProcessTimeline() {
 }
 
 function TimelineItem({ step, index }: { step: any, index: number }) {
-  const itemRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: itemRef,
-    offset: ["start 90%", "start 20%"]
-  });
-
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
-
-  const x = useTransform(scrollYProgress, [0, 1], [index % 2 === 0 ? -100 : 100, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [index % 2 === 0 ? -10 : 10, 0]);
-
   return (
     <motion.div 
-      ref={itemRef}
-      style={{ opacity }}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, delay: 0.1 }}
       className="relative"
     >
-      <div className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+      <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
         {/* Step Card */}
-        <motion.div 
-          style={isMobile ? { opacity: 1 } : { x, rotate, opacity }}
-          className={`flex-1 w-full ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
-        >
-          <div className={`group p-10 rounded-[3rem] bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden h-full`}>
+        <div className={`flex-1 w-full pl-12 md:pl-0 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+          <div className="group p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden h-full">
             <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
             
-            <div className={`relative z-10`}>
-              <span className="text-5xl mb-8 inline-block animate-bounce-gentle">
+            <div className="relative z-10">
+              <span className="text-4xl md:text-5xl mb-6 md:mb-8 inline-block animate-bounce-gentle">
                 {step.icon}
               </span>
-              <h3 className="text-3xl font-heading font-black text-dark mb-6 group-hover:text-primary transition-colors">
+              <h3 className="text-2xl md:text-3xl font-heading font-black text-dark mb-4 md:mb-6 group-hover:text-primary transition-colors">
                 {step.title}
               </h3>
-              <p className="text-lg text-gray-500 leading-relaxed font-medium">
+              <p className="text-base md:text-lg text-gray-500 leading-relaxed font-medium">
                 {step.desc}
               </p>
             </div>
             
             {/* Background Number */}
-            <span className="absolute -bottom-10 -right-10 text-[12rem] font-black text-gray-50 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity select-none pointer-events-none">
+            <span className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 text-[8rem] md:text-[12rem] font-black text-gray-50 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity select-none pointer-events-none">
               0{index + 1}
             </span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Center Indicator */}
-        <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 z-10 flex items-center justify-center w-10 h-10">
+        <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 z-10 flex items-center justify-center w-10 h-10 top-0 md:top-1/2 md:-translate-y-1/2">
           <motion.div 
             whileInView={{ scale: [0, 1.2, 1] }}
             viewport={{ once: true }}
