@@ -19,7 +19,7 @@ const logos = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-40 pb-40 grid-bg overflow-x-hidden">
+    <section className="relative w-full pt-32 pb-12 md:pt-40 md:pb-40 grid-bg overflow-x-hidden">
       {/* Background Gradient Blurs */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-100/30 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary-100/30 blur-[150px] rounded-full pointer-events-none" />
@@ -170,7 +170,7 @@ export default function Hero() {
         </div>
 
         {/* Feature Cards from Reference */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-24">
           
           {/* Card 1: Destinations (Blue Theme) */}
           <motion.div

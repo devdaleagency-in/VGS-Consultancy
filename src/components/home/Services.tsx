@@ -44,7 +44,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="services">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden" id="services">
       {/* Decorative Background */}
       <div className="absolute top-0 right-0 p-20 opacity-5 pointer-events-none">
         <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
