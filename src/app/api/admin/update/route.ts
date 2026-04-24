@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import connectDB from '@/lib/db';
+import Content from '@/models/Content';
 
 export async function POST(request: Request) {
   try {
@@ -12,18 +12,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    let filePath = '';
-    if (type === 'success-stories') {
-      filePath = path.join(process.cwd(), 'src/data/success-stories.json');
-    } else if (type === 'destinations') {
-      filePath = path.join(process.cwd(), 'src/data/destinations.json');
-    } else if (type === 'about') {
-      filePath = path.join(process.cwd(), 'src/data/about.json');
-    } else {
+    if (!type || !['success-stories', 'destinations', 'about'].includes(type)) {
       return NextResponse.json({ error: 'Invalid type' }, { status: 400 });
     }
 
-    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
+    await connectDB();
+
+    // Persist to MongoDB
+    await Content.findOneAndUpdate(
+      { type },
+      { data },
+      { upsert: true, new: true }
+    );
 
     return NextResponse.json({ message: 'Update successful' });
   } catch (error) {
