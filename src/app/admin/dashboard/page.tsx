@@ -103,17 +103,17 @@ export default function AdminDashboard() {
     }
   };
 
-  const deleteMedia = async (filename: string) => {
+  const deleteMedia = async (url: string) => {
     if (!confirm('Are you sure you want to delete this file? This cannot be undone.')) return;
     const password = localStorage.getItem('vgs_admin_pass');
     try {
       const res = await fetch('/api/admin/upload', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ filename, password })
+        body: JSON.stringify({ url, password })
       });
       if (res.ok) {
-        setMedia(media.filter(m => m.name !== filename));
+        setMedia(media.filter(m => m.url !== url));
       }
     } catch (err) {
       console.error(err);
@@ -677,7 +677,7 @@ export default function AdminDashboard() {
                            View Full
                          </a>
                          <button 
-                           onClick={() => deleteMedia(item.name)}
+                           onClick={() => deleteMedia(item.url)}
                            className="px-4 py-3 bg-red-50 text-red-500 rounded-xl font-black text-[9px] uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all"
                          >
                            Delete

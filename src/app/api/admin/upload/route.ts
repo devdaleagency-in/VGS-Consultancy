@@ -1,17 +1,5 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
-
-const uploadDir = path.join(process.cwd(), 'public/uploads');
-
-// Ensure upload directory exists
-const ensureDir = async () => {
-  try {
-    await fs.access(uploadDir);
-  } catch {
-    await fs.mkdir(uploadDir, { recursive: true });
-  }
-};
+import { put, del, list } from '@vercel/blob';
 
 export async function GET(request: Request) {
   try {
@@ -22,25 +10,18 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    await ensureDir();
-    const files = await fs.readdir(uploadDir);
+    const { blobs } = await list();
     
-    // Filter out hidden files and sort by newest
-    const stats = await Promise.all(
-      files.filter(f => !f.startsWith('.')).map(async (f) => {
-        const filePath = path.join(uploadDir, f);
-        const s = await fs.stat(filePath);
-        return {
-          name: f,
-          url: `/uploads/${f}`,
-          size: s.size,
-          mtime: s.mtime,
-          type: f.match(/\.(mp4|webm|ogg)$/i) ? 'video' : 'image'
-        };
-      })
-    );
+    // Map blobs to the expected dashboard format
+    const stats = blobs.map((blob) => ({
+      name: blob.pathname,
+      url: blob.url,
+      size: blob.size,
+      mtime: blob.uploadedAt,
+      type: blob.pathname.match(/\.(mp4|webm|ogg)$/i) ? 'video' : 'image'
+    }));
 
-    return NextResponse.json(stats.sort((a, b) => b.mtime.getTime() - a.mtime.getTime()));
+    return NextResponse.json(stats.sort((a, b) => new Date(b.mtime).getTime() - new Date(a.mtime).getTime()));
   } catch (error) {
     console.error('List error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
@@ -61,19 +42,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
     }
 
-    await ensureDir();
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Create a unique filename
-    const filename = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`;
-    const filePath = path.join(uploadDir, filename);
-
-    await fs.writeFile(filePath, buffer);
+    // Upload to Vercel Blob
+    const blob = await put(file.name, file, {
+      access: 'public',
+      addRandomSuffix: true, // Prevents collisions
+    });
 
     return NextResponse.json({ 
       message: 'Upload successful',
-      url: `/uploads/${filename}`
+      url: blob.url
     });
   } catch (error) {
     console.error('Upload error:', error);
@@ -83,18 +60,17 @@ export async function POST(request: Request) {
 
 export async function DELETE(request: Request) {
   try {
-    const { filename, password } = await request.json();
+    const { url, password } = await request.json(); // Use URL for deletion in Blob
 
     if (password !== 'vgs-admin-2024') {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    if (!filename) {
-      return NextResponse.json({ error: 'No filename provided' }, { status: 400 });
+    if (!url) {
+      return NextResponse.json({ error: 'No URL provided' }, { status: 400 });
     }
 
-    const filePath = path.join(uploadDir, filename);
-    await fs.unlink(filePath);
+    await del(url);
 
     return NextResponse.json({ message: 'File deleted successfully' });
   } catch (error) {
