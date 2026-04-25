@@ -50,7 +50,7 @@ export default function VisaContactForm({ visaType: initialVisaType }: { visaTyp
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-8 md:p-12 bg-white rounded-[3rem] shadow-[0_30px_70px_rgba(37,99,235,0.08)] border border-black/5">
+    <div className="w-full max-w-2xl mx-auto p-5 md:p-12 bg-white rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_70px_rgba(37,99,235,0.08)] border border-black/5">
       <div className="mb-10 text-center">
         <h3 className="text-3xl font-black text-dark mb-2 uppercase tracking-tighter">Secure Your {initialVisaType}</h3>
         <p className="text-dark/40 font-black text-[10px] uppercase tracking-[0.2em]">Start your professional journey with VGS Global</p>

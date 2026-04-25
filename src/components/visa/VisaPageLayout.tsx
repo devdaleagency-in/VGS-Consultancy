@@ -77,7 +77,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-[12vw] font-heading font-black text-dark leading-none tracking-tighter uppercase"
+            className="text-5xl sm:text-7xl md:text-[12vw] font-heading font-black text-dark leading-none tracking-tighter uppercase break-words"
           >
             {title.split(' ')[0]}<span className="text-primary italic font-accent">{title.split(' ')[1] || ''}</span>
           </motion.h1>
@@ -113,7 +113,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
       </section>
 
       {/* Main Content Full Width */}
-      <section className="py-32 px-6">
+      <section className="py-20 md:py-32 px-4 md:px-6">
         <div className="max-w-[1200px] mx-auto space-y-32">
           
           {/* Why VGS & Features */}
@@ -124,7 +124,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="text-5xl md:text-7xl font-heading font-black text-dark mb-12 tracking-tighter">Why Choose VGS for <br/> your {title}?</h2>
+              <h2 className="text-4xl md:text-7xl font-heading font-black text-dark mb-12 tracking-tighter">Why Choose VGS for <br className="hidden md:block" /> your {title}?</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left">
                 {features.map((feature, i) => (
                   <div key={i} className="flex items-center gap-4 md:gap-6 p-6 md:p-8 bg-gray-50/50 rounded-[2rem] md:rounded-[2.5rem] border border-gray-100 hover:border-primary/30 transition-all group hover:bg-white hover:shadow-2xl">
@@ -144,7 +144,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
       </section>
 
       {/* New Footer Contact Section */}
-      <section id="contact-form" className="py-32 px-6 bg-gray-50 border-t border-gray-100">
+      <section id="contact-form" className="py-20 md:py-32 px-4 md:px-6 bg-gray-50 border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             
@@ -187,7 +187,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
             </div>
 
             {/* The Form */}
-            <div className="bg-white p-12 md:p-16 rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-gray-100">
+            <div className="bg-white p-6 md:p-16 rounded-[2.5rem] md:rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-gray-100">
               <VisaContactForm visaType={title} />
             </div>
 
