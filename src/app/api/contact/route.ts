@@ -33,6 +33,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Database configuration missing' }, { status: 500 });
     }
 
+    // 4. Verify OTP Status in DB
+    await connectDB();
+    const verifiedRecord = await (await import('@/models/OTP')).default.findOne({ 
+      email, 
+      verified: true,
+      expiresAt: { $gt: new Date() } 
+    });
+
+    if (!verifiedRecord) {
+      return NextResponse.json({ 
+        error: 'Email not verified. Please verify your email using OTP before submitting.' 
+      }, { status: 403 });
+    }
+
     // 4. Connect to MongoDB and Save
     try {
       console.log('Connecting to database...');

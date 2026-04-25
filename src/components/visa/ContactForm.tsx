@@ -7,6 +7,7 @@ import * as z from 'zod';
 import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 import { CustomToast } from '@/components/ui/CustomToast';
+import OTPVerification from '@/components/forms/OTPVerification';
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -29,13 +30,15 @@ interface ContactFormProps {
 export default function ContactForm({ defaultCountry = '', defaultVisaType = '', isCompact = false }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-    setValue
+    setValue,
+    watch
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -114,7 +117,14 @@ export default function ContactForm({ defaultCountry = '', defaultVisaType = '',
             <input 
               {...register("email")}
               placeholder="email@example.com" 
-              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.email ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all text-sm`}
+              disabled={isEmailVerified}
+              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.email ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all text-sm ${isEmailVerified ? 'opacity-50' : ''}`}
+            />
+            {errors.email && <p className="text-red-500 text-[10px] ml-2 font-bold">{errors.email.message}</p>}
+            
+            <OTPVerification 
+              email={watch('email')} 
+              onVerified={(val) => setIsEmailVerified(val)} 
             />
           </div>
         </div>
@@ -187,12 +197,12 @@ export default function ContactForm({ defaultCountry = '', defaultVisaType = '',
         </div>
 
         <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
+          whileHover={{ scale: isEmailVerified ? 1.02 : 1 }}
+          whileTap={{ scale: isEmailVerified ? 0.98 : 1 }}
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || !isEmailVerified}
           className={`w-full py-4 text-white rounded-xl font-bold text-sm uppercase tracking-widest shadow-glow transition-all flex items-center justify-center gap-3 relative overflow-hidden ${
-            isSubmitting ? 'bg-primary-600' : isSuccess ? 'bg-green-500' : 'bg-primary'
+            isSubmitting ? 'bg-primary-600' : isSuccess ? 'bg-green-500' : isEmailVerified ? 'bg-primary' : 'bg-gray-400 cursor-not-allowed opacity-50'
           }`}
         >
           <AnimatePresence mode="wait">
@@ -200,8 +210,10 @@ export default function ContactForm({ defaultCountry = '', defaultVisaType = '',
               <motion.span key="submitting">Processing...</motion.span>
             ) : isSuccess ? (
               <motion.span key="success">Sent! ✅</motion.span>
-            ) : (
+            ) : isEmailVerified ? (
               <motion.span key="idle">Send Inquiry</motion.span>
+            ) : (
+              <motion.span key="verify">Verify Email to Send</motion.span>
             )}
           </AnimatePresence>
         </motion.button>

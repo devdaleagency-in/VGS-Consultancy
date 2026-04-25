@@ -7,6 +7,8 @@ import * as z from 'zod';
 import { toast } from 'sonner';
 
 import { CustomToast } from '@/components/ui/CustomToast';
+import OTPVerification from '@/components/forms/OTPVerification';
+import { useState } from 'react';
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -19,7 +21,8 @@ const formSchema = z.object({
 });
 
 export default function VisaContactForm({ visaType: initialVisaType }: { visaType: string }) {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<z.infer<typeof formSchema>>({
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset, watch } = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       visaType: initialVisaType.includes('Study') ? 'Student' : 
@@ -72,9 +75,15 @@ export default function VisaContactForm({ visaType: initialVisaType }: { visaTyp
             <input 
               {...register("email")}
               placeholder="Email Address"
-              className="w-full px-4 md:px-6 py-3 md:py-4 bg-gray-50 border-none rounded-xl md:rounded-2xl focus:ring-2 focus:ring-primary/20 transition-all font-bold text-dark outline-none text-sm"
+              disabled={isEmailVerified}
+              className={`w-full px-4 md:px-6 py-3 md:py-4 bg-gray-50 border-none rounded-xl md:rounded-2xl focus:ring-2 focus:ring-primary/20 transition-all font-bold text-dark outline-none text-sm ${isEmailVerified ? 'opacity-50' : ''}`}
             />
             {errors.email && <p className="text-red-500 text-[10px] ml-4 uppercase font-black">{errors.email.message}</p>}
+            
+            <OTPVerification 
+              email={watch('email')} 
+              onVerified={(val) => setIsEmailVerified(val)} 
+            />
           </div>
         </div>
 
@@ -149,12 +158,12 @@ export default function VisaContactForm({ visaType: initialVisaType }: { visaTyp
         </div>
 
         <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          disabled={isSubmitting}
-          className="w-full py-5 bg-dark text-white rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-dark/10 hover:bg-primary transition-all disabled:opacity-50 text-xs"
+          whileHover={{ scale: isEmailVerified ? 1.02 : 1 }}
+          whileTap={{ scale: isEmailVerified ? 0.98 : 1 }}
+          disabled={isSubmitting || !isEmailVerified}
+          className="w-full py-5 bg-dark text-white rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-dark/10 hover:bg-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed text-xs"
         >
-          {isSubmitting ? "Processing..." : "Submit Application"}
+          {isSubmitting ? "Processing..." : isEmailVerified ? "Submit Application" : "Verify Email to Continue"}
         </motion.button>
       </form>
     </div>
