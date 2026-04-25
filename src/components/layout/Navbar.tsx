@@ -103,9 +103,9 @@ export default function Navbar() {
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="absolute top-20 left-6 right-6 nav-liquid-glass p-6 shadow-3xl lg:hidden z-[60] !rounded-[2rem]"
+            className="absolute top-20 left-10 right-10 nav-liquid-glass p-5 shadow-3xl lg:hidden z-[60] rounded-2xl"
           >
-            <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col gap-5 items-center">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
