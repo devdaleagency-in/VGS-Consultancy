@@ -102,84 +102,31 @@ export default function DestinationDetailPage() {
             </div>
           </section>
 
-          {/* Content Section */}
-          <section className="py-20 md:py-32 px-2 md:px-6">
+          {/* Top Content: Why Choose & Popular Programs */}
+          <section className="py-20 md:py-32 px-4 md:px-6">
             <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
-
-              {/* Features */}
+              {/* Features Column */}
               <div className="space-y-10 md:space-y-12">
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-3xl md:text-4xl font-heading font-black text-dark mb-6 md:mb-8">Why Choose {data.name}?</h2>
+                  <h2 className="text-3xl md:text-5xl font-heading font-black text-dark mb-8 md:mb-12 tracking-tighter uppercase">Why Choose {data.name}?</h2>
                   <div className="space-y-4">
                     {data.features.map((feature: string, i: number) => (
-                      <div key={i} className="flex items-center gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all group">
-                        <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">✓</div>
-                        <span className="font-bold text-dark text-sm md:text-base">{feature}</span>
+                      <div key={i} className="flex items-center gap-4 p-5 md:p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all group">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 font-bold">✓</div>
+                        <span className="font-bold text-dark text-base md:text-lg">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </motion.div>
-
-                {/* Ready to Apply Section - Two Column with Form */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="px-2 py-12 md:p-12 lg:p-16 bg-dark rounded-[1.5rem] md:rounded-[4rem] text-white relative overflow-hidden group shadow-2xl mt-16"
-                  id="apply-form"
-                >
-                  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-24 items-center">
-                    <div className="text-center md:text-left">
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-light font-black text-[10px] tracking-[0.3em] uppercase mb-6"
-                      >
-                        Application Hub
-                      </motion.div>
-                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black mb-8 italic leading-tight">
-                        Ready to <br /> <span className="text-primary tracking-normal not-italic uppercase">Apply?</span>
-                      </h3>
-                      <p className="text-white/60 mb-10 font-medium text-lg md:text-xl leading-relaxed max-w-md">
-                        Get personalized advice from our country experts. Fill out the form and we'll help you navigate every step of your {data.name} journey.
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-xl">⚡</div>
-                          <div className="text-left">
-                            <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Quick Response</p>
-                            <p className="font-bold text-sm">Under 24 Hours</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-xl">🛡️</div>
-                          <div className="text-left">
-                            <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Success Rate</p>
-                            <p className="font-bold text-sm">98% Verified</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full" />
-                      <ContactForm defaultCountry={data.name} isCompact={true} />
-                    </div>
-                  </div>
-                  
-                  <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -ml-32 -mb-32 pointer-events-none" />
-                </motion.div>
               </div>
 
-              {/* Programs */}
-              <div className="space-y-8">
-                <h2 className="text-3xl md:text-4xl font-heading font-black text-dark mb-8 md:mb-10">Popular Programs</h2>
+              {/* Programs Column */}
+              <div className="space-y-10 md:space-y-12">
+                <h2 className="text-3xl md:text-5xl font-heading font-black text-dark mb-8 md:mb-12 tracking-tighter uppercase">Popular Programs</h2>
                 <div className="grid grid-cols-1 gap-4 md:gap-6">
                   {data.programs.map((prog: any, i: number) => (
                     <motion.div
@@ -188,28 +135,88 @@ export default function DestinationDetailPage() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="p-6 md:p-8 bg-white rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all cursor-pointer group"
+                      className="p-6 md:p-10 bg-white rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm hover:shadow-2xl transition-all cursor-pointer group"
                     >
                       <div className="flex justify-between items-center">
                         <div>
-                          <h4 className="text-lg md:text-xl font-black text-dark group-hover:text-primary transition-colors">{prog.title}</h4>
-                          <p className="text-[10px] md:text-sm text-gray-500 font-bold uppercase tracking-widest">{prog.level}</p>
+                          <h4 className="text-xl md:text-2xl font-black text-dark group-hover:text-primary transition-colors">{prog.title}</h4>
+                          <p className="text-[10px] md:text-sm text-gray-500 font-bold uppercase tracking-widest mt-2">{prog.level}</p>
                         </div>
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all shrink-0">
-                          →
+                        <div className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all shrink-0">
+                          <span className="text-xl md:text-3xl">→</span>
                         </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
-
                 <div className="pt-8 text-center md:text-left">
-                  <Link href="/destinations" className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-gray-400 hover:text-primary transition-all">
-                    ← Back to Destinations
+                  <Link href="/destinations" className="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-gray-400 hover:text-primary transition-all">
+                    ← Explore More Destinations
                   </Link>
                 </div>
               </div>
+            </div>
+          </section>
 
+          {/* STANDALONE IMMERSIVE APPLICATION HUB */}
+          <section id="apply-form" className="w-full bg-dark py-24 md:py-40 relative overflow-hidden">
+            {/* Background Effects */}
+            <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/10 rounded-full blur-[150px] -mr-[20vw] -mt-[20vw] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-primary/10 rounded-full blur-[120px] -ml-[15vw] -mb-[15vw] pointer-events-none" />
+            
+            <div className="max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+                
+                {/* Left Content */}
+                <div className="text-center lg:text-left">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="inline-block px-5 py-2 rounded-full bg-primary/20 text-primary-light font-black text-[10px] md:text-xs tracking-[0.4em] uppercase mb-10"
+                  >
+                    Application Hub
+                  </motion.div>
+                  
+                  <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-10 italic leading-none tracking-tighter">
+                    Ready to <br /> <span className="text-primary tracking-normal not-italic uppercase">Apply?</span>
+                  </h3>
+                  
+                  <p className="text-white/60 mb-12 font-medium text-lg md:text-2xl leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Get personalized advice from our country experts. Fill out the form and we'll help you navigate every step of your {data.name} journey.
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-3xl">⚡</div>
+                      <div className="text-left">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Quick Response</p>
+                        <p className="font-bold text-lg text-white">Under 24 Hours</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-3xl">🛡️</div>
+                      <div className="text-left">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Success Rate</p>
+                        <p className="font-bold text-lg text-white">98% Verified</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Form */}
+                <div className="relative">
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="relative z-10"
+                  >
+                    <div className="absolute inset-0 bg-primary/30 blur-[100px] -z-10 rounded-full opacity-50" />
+                    <ContactForm defaultCountry={data.name} isCompact={true} />
+                  </motion.div>
+                </div>
+
+              </div>
             </div>
           </section>
 
