@@ -111,7 +111,7 @@ export default function OTPVerification({ email, onVerified }: OTPVerificationPr
             key="verify"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col sm:flex-row gap-3 items-end"
+            className="flex flex-col gap-3"
           >
             <div className="flex-1 w-full space-y-1">
               <label className="text-[9px] font-black uppercase tracking-widest text-dark/40 ml-4">Enter 6-digit Code</label>
@@ -124,20 +124,20 @@ export default function OTPVerification({ email, onVerified }: OTPVerificationPr
                 className="w-full px-6 py-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all font-black text-center text-lg tracking-[0.5em] outline-none"
               />
             </div>
-            <div className="flex gap-2 w-full sm:w-auto">
+            <div className="flex gap-2 w-full">
               <button
                 type="button"
                 onClick={verifyOTP}
                 disabled={loading || otp.length !== 6}
-                className="flex-1 sm:flex-none px-8 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-primary-dark transition-all disabled:opacity-50 h-[52px]"
+                className="flex-1 px-4 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-primary-dark transition-all disabled:opacity-50 h-[50px]"
               >
-                {loading ? '...' : 'Verify'}
+                {loading ? '...' : 'Verify Code'}
               </button>
               <button
                 type="button"
                 onClick={sendOTP}
                 disabled={loading || countdown > 0}
-                className="px-4 py-3 bg-gray-100 text-gray-400 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-gray-200 transition-all disabled:opacity-50 h-[52px]"
+                className="px-4 py-3 bg-gray-100 text-gray-400 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-gray-200 transition-all disabled:opacity-50 h-[50px]"
               >
                 {countdown > 0 ? countdown : 'Resend'}
               </button>

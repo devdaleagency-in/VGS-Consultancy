@@ -19,12 +19,14 @@ const formSchema = z.object({
 });
 
 import { CustomToast } from '@/components/ui/CustomToast';
+import OTPVerification from '@/components/forms/OTPVerification';
 
 type FormData = z.infer<typeof formSchema>;
 
 function ContactContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   const searchParams = useSearchParams();
   const typeParam = searchParams.get('type');
@@ -35,7 +37,8 @@ function ContactContent() {
     handleSubmit,
     formState: { errors },
     reset,
-    setValue
+    setValue,
+    watch
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -222,9 +225,15 @@ function ContactContent() {
                     <input 
                       {...register("email")}
                       placeholder="Enter your email" 
-                      className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.email ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all`}
+                      disabled={isEmailVerified}
+                      className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.email ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all ${isEmailVerified ? 'opacity-50' : ''}`}
                     />
                     {errors.email && <p className="text-xs text-red-500 font-medium mt-1">{errors.email.message}</p>}
+                    
+                    <OTPVerification 
+                      email={watch('email')} 
+                      onVerified={(val) => setIsEmailVerified(val)} 
+                    />
                   </div>
                 </div>
 
@@ -301,12 +310,12 @@ function ContactContent() {
                 </div>
 
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ scale: isEmailVerified ? 1.02 : 1 }}
+                  whileTap={{ scale: isEmailVerified ? 0.98 : 1 }}
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !isEmailVerified}
                   className={`w-full py-5 text-white rounded-2xl font-bold text-lg shadow-glow transition-all flex items-center justify-center gap-3 relative overflow-hidden ${
-                    isSubmitting ? 'bg-primary-600' : isSuccess ? 'bg-green-500' : 'bg-primary'
+                    isSubmitting ? 'bg-primary-600' : isSuccess ? 'bg-green-500' : isEmailVerified ? 'bg-primary' : 'bg-gray-400 cursor-not-allowed opacity-50'
                   }`}
                 >
                   <AnimatePresence mode="wait">
@@ -347,7 +356,7 @@ function ContactContent() {
                       >
                         Sent Successfully! ✅
                       </motion.div>
-                    ) : (
+                    ) : isEmailVerified ? (
                       <motion.div
                         key="idle"
                         initial={{ opacity: 0 }}
@@ -356,6 +365,16 @@ function ContactContent() {
                         className="z-10"
                       >
                         Send Inquiry Now
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="verify"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="z-10"
+                      >
+                        Verify Email to Send
                       </motion.div>
                     )}
                   </AnimatePresence>
