@@ -103,7 +103,7 @@ export default function DestinationDetailPage() {
           </section>
 
           {/* Content Section */}
-          <section className="py-20 md:py-32 px-6">
+          <section className="py-20 md:py-32 px-2 md:px-6">
             <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
 
               {/* Features */}
@@ -129,7 +129,7 @@ export default function DestinationDetailPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="p-5 md:p-12 lg:p-16 bg-dark rounded-[2rem] md:rounded-[4rem] text-white relative overflow-hidden group shadow-2xl mt-16"
+                  className="px-2 py-12 md:p-12 lg:p-16 bg-dark rounded-[1.5rem] md:rounded-[4rem] text-white relative overflow-hidden group shadow-2xl mt-16"
                   id="apply-form"
                 >
                   <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-24 items-center">
@@ -225,11 +225,11 @@ export default function DestinationDetailPage() {
                 const el = document.getElementById('apply-form');
                 el?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="pointer-events-auto flex items-center justify-between md:justify-center gap-4 bg-dark text-white pl-8 pr-4 py-4 md:px-10 md:py-6 rounded-full shadow-2xl border border-white/10 hover:bg-primary transition-all group w-full md:w-auto cursor-pointer"
+              className="pointer-events-auto flex items-center justify-between md:justify-center gap-2 md:gap-4 bg-dark text-white pl-6 pr-3 py-3 md:px-10 md:py-6 rounded-full shadow-2xl border border-white/10 hover:bg-primary transition-all group w-full md:w-auto cursor-pointer scale-90 md:scale-100"
             >
-              <span className="font-heading font-black text-[10px] md:text-xs tracking-widest uppercase">Start Your {data.name} Journey</span>
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all shrink-0">
-                <span className="text-xl md:text-2xl">→</span>
+              <span className="font-heading font-black text-[9px] md:text-xs tracking-widest uppercase truncate">Start Your {data.name} Journey</span>
+              <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all shrink-0">
+                <span className="text-base md:text-xl md:text-2xl">→</span>
               </div>
             </div>
           </motion.div>

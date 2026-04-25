@@ -95,7 +95,7 @@ export default function ContactForm({ defaultCountry = '', defaultVisaType = '',
   };
 
   return (
-    <div className={`bg-white ${isCompact ? 'p-4 md:p-8' : 'p-6 md:p-12'} rounded-[1.5rem] md:rounded-[2.5rem] shadow-elevated border border-gray-100`}>
+    <div className={`bg-white ${isCompact ? 'px-3 py-6 md:p-8' : 'px-4 py-8 md:p-12'} rounded-[1.25rem] md:rounded-[2.5rem] shadow-elevated border border-gray-100`}>
       <h2 className={`${isCompact ? 'text-2xl' : 'text-3xl'} font-heading font-bold text-dark mb-4`}>Book Expert Session</h2>
       <p className="text-gray-500 mb-8 text-sm">Fill out the form and our expert counselor will contact you within 24 hours.</p>
 
