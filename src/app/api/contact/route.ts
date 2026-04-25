@@ -54,30 +54,25 @@ export async function POST(req: NextRequest) {
         console.log('Attempting to send notification emails...');
         
         try {
-          // Admin Email
-          resend.emails.send({
-            from: 'VGS Global Inquiry <onboarding@resend.dev>',
-            to: ADMIN_EMAIL,
-            subject: `New Inquiry: ${name} - ${country}`,
-            react: React.createElement(AdminEmailTemplate, { name, email, phone, country, course, visaType, message }),
-          }).then(res => {
-            if (res.error) console.error('Admin Email Failed:', res.error);
-            else console.log('Admin Email Sent:', res.data?.id);
-          }).catch(e => console.error('Admin Email Async Crash:', e));
+          const [adminRes, userRes] = await Promise.all([
+            resend.emails.send({
+              from: 'VGS Global <onboarding@resend.dev>',
+              to: ADMIN_EMAIL,
+              subject: `New Inquiry: ${name} - ${country}`,
+              react: React.createElement(AdminEmailTemplate, { name, email, phone, country, course, visaType, message }),
+            }),
+            resend.emails.send({
+              from: 'VGS Global <onboarding@resend.dev>',
+              to: email,
+              subject: 'We received your inquiry - VGS Global',
+              react: React.createElement(UserEmailTemplate, { name }),
+            })
+          ]);
 
-          // User Confirmation Email
-          resend.emails.send({
-            from: 'VGS Global <onboarding@resend.dev>',
-            to: email,
-            subject: 'We received your inquiry - VGS Global',
-            react: React.createElement(UserEmailTemplate, { name }),
-          }).then(res => {
-            if (res.error) console.error('User Email Failed:', res.error);
-            else console.log('User Email Sent:', res.data?.id);
-          }).catch(e => console.error('User Email Async Crash:', e));
-
-        } catch (templateError) {
-          console.error('Email Template Rendering Error (leads still saved):', templateError);
+          if (adminRes.error) console.error('Admin Email Failed:', adminRes.error);
+          if (userRes.error) console.error('User Email Failed:', userRes.error);
+        } catch (emailError) {
+          console.error('Email Error:', emailError);
         }
       }
 
