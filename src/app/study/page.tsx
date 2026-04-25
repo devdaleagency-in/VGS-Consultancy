@@ -385,7 +385,7 @@ export default function StudyVisaPage() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-20 shadow-[0_50px_100px_rgba(0,0,0,0.03)] border border-gray-50"
+              className="bg-white rounded-[2rem] md:rounded-[4rem] p-3 md:p-20 shadow-[0_50px_100px_rgba(0,0,0,0.03)] border border-gray-50"
             >
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-6xl font-heading font-black text-dark mb-8 tracking-tighter uppercase">
@@ -408,20 +408,20 @@ export default function StudyVisaPage() {
                         {/* Header / Trigger */}
                         <button 
                           onClick={() => setActiveSectionId(isOpen ? null : section.id)}
-                          className="w-full flex items-center gap-4 md:gap-6 p-6 md:p-10 text-left"
+                          className="w-full flex items-center gap-3 md:gap-6 p-4 md:p-10 text-left"
                         >
-                          <span className={`w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center font-black text-lg md:text-xl shadow-lg transition-all duration-500 ${
+                          <span className={`w-9 h-9 md:w-14 md:h-14 rounded-lg md:rounded-2xl flex-shrink-0 flex items-center justify-center font-black text-base md:text-xl shadow-lg transition-all duration-500 ${
                             isOpen ? 'bg-primary text-white rotate-[360deg]' : 'bg-gray-100 text-gray-400'
                           }`}>
                             {section.id}
                           </span>
-                          <h3 className="text-xl md:text-3xl font-heading font-black text-dark tracking-tighter flex-1">
+                          <h3 className="text-lg md:text-3xl font-heading font-black text-dark tracking-tighter flex-1 leading-tight">
                             {section.title}
                           </h3>
-                          <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
+                          <div className={`w-7 h-7 md:w-10 md:h-10 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-all duration-500 ${
                             isOpen ? 'border-primary text-primary rotate-180' : 'border-gray-200 text-gray-300'
                           }`}>
-                            <span className="text-lg md:text-xl font-black">{isOpen ? '−' : '+'}</span>
+                            <span className="text-base md:text-xl font-black">{isOpen ? '−' : '+'}</span>
                           </div>
                         </button>
 
@@ -458,7 +458,7 @@ export default function StudyVisaPage() {
                                 }
                               }}
                             >
-                              <div className="px-8 md:px-10 pb-12 pt-0">
+                              <div className="px-0 md:px-10 pb-6 md:pb-12 pt-0">
                                 {section.points ? (
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 md:ml-10 md:pl-12 md:border-l-2 border-primary/20">
                                     {section.points.map((point, idx) => (
@@ -467,15 +467,15 @@ export default function StudyVisaPage() {
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: idx * 0.1 + 0.3 }}
-                                        className="space-y-3 md:space-y-4 p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all group"
+                                        className="space-y-3 md:space-y-4 p-4 md:p-6 rounded-[1rem] md:rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all group mx-2 md:mx-0"
                                       >
                                         <div className="flex items-center gap-3 md:gap-4">
                                           <span className="text-xl md:text-2xl group-hover:scale-125 transition-transform duration-500">{point.icon}</span>
-                                          <h4 className="text-base md:text-lg font-black text-dark uppercase tracking-widest">
+                                          <h4 className="text-sm md:text-lg font-black text-dark uppercase tracking-widest leading-tight">
                                             {point.subtitle}
                                           </h4>
                                         </div>
-                                        <p className="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
+                                        <p className="text-xs md:text-base text-gray-500 font-medium leading-relaxed">
                                           {point.text}
                                         </p>
                                       </motion.div>
@@ -486,11 +486,11 @@ export default function StudyVisaPage() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.3 }}
-                                    className="ml-4 md:ml-10 pl-8 md:pl-12 border-l-2 border-primary/20"
+                                    className="px-2 md:px-0 md:ml-10 md:pl-12 md:border-l-2 border-primary/20"
                                   >
-                                    <div className="flex gap-8 items-start p-8 rounded-[2.5rem] bg-white border border-gray-100 shadow-sm">
-                                      <span className="text-5xl">{section.icon}</span>
-                                      <p className="text-gray-500 font-medium leading-relaxed text-xl md:text-2xl italic flex-1">
+                                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-start p-4 md:p-8 rounded-[1rem] md:rounded-[2.5rem] bg-white border border-gray-100 shadow-sm">
+                                      <span className="text-3xl md:text-5xl flex-shrink-0">{section.icon}</span>
+                                      <p className="text-sm md:text-2xl text-gray-400 font-medium leading-relaxed italic flex-1">
                                         {section.text}
                                       </p>
                                     </div>

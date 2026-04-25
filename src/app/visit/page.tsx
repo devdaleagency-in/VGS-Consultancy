@@ -254,24 +254,24 @@ export default function VisitVisaPage() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
                           >
-                            <div className="px-8 md:px-10 pb-12 pt-0">
+                            <div className="px-0 md:px-10 pb-6 md:pb-12 pt-0">
                               {section.points ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 md:ml-10 md:pl-12 md:border-l-2 border-primary/20">
                                   {section.points.map((point: any, idx: number) => (
-                                    <div key={idx} className="space-y-3 md:space-y-4 p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] bg-white border border-gray-100 shadow-sm">
+                                    <div key={idx} className="space-y-3 md:space-y-4 p-4 md:p-6 rounded-[1rem] md:rounded-[2rem] bg-white border border-gray-100 shadow-sm mx-2 md:mx-0">
                                       <div className="flex items-center gap-3 md:gap-4">
                                         <span className="text-xl md:text-2xl">{point.icon}</span>
-                                        <h4 className="text-base md:text-lg font-black text-dark uppercase tracking-widest">{point.subtitle}</h4>
+                                        <h4 className="text-sm md:text-lg font-black text-dark uppercase tracking-widest leading-tight">{point.subtitle}</h4>
                                       </div>
-                                      <p className="text-sm md:text-base text-gray-500 font-medium leading-relaxed">{point.text}</p>
+                                      <p className="text-xs md:text-base text-gray-500 font-medium leading-relaxed">{point.text}</p>
                                     </div>
                                   ))}
                                 </div>
                               ) : (
-                                <div className="ml-4 md:ml-10 pl-8 md:pl-12 border-l-2 border-primary/20">
-                                  <div className="flex gap-8 items-start p-8 rounded-[2.5rem] bg-white border border-gray-100">
-                                    <span className="text-5xl">{section.icon}</span>
-                                    <p className="text-gray-500 font-medium leading-relaxed text-xl md:text-2xl italic flex-1">{section.text}</p>
+                                <div className="px-2 md:px-0 md:ml-10 md:pl-12 md:border-l-2 border-primary/20">
+                                  <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-start p-4 md:p-8 rounded-[1rem] md:rounded-[2.5rem] bg-white border border-gray-100 shadow-sm">
+                                    <span className="text-3xl md:text-5xl flex-shrink-0">{section.icon}</span>
+                                    <p className="text-sm md:text-2xl text-gray-400 font-medium leading-relaxed italic flex-1">{section.text}</p>
                                   </div>
                                 </div>
                               )}

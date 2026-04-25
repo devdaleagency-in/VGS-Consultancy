@@ -77,7 +77,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-5xl sm:text-7xl md:text-[12vw] font-heading font-black text-dark leading-none tracking-tighter uppercase break-words"
+            className="text-4xl sm:text-7xl md:text-[12vw] font-heading font-black text-dark leading-none tracking-tighter uppercase break-words"
           >
             {title.split(' ')[0]}<span className="text-primary italic font-accent">{title.split(' ')[1] || ''}</span>
           </motion.h1>
@@ -113,8 +113,8 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
       </section>
 
       {/* Main Content Full Width */}
-      <section className="py-20 md:py-32 px-4 md:px-6">
-        <div className="max-w-[1200px] mx-auto space-y-32">
+      <section className="pt-32 pb-16 md:py-32 px-3 md:px-6">
+        <div className="max-w-[1200px] mx-auto space-y-16 md:space-y-32">
           
           {/* Why VGS & Features */}
           <div className="space-y-12">
@@ -144,7 +144,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
       </section>
 
       {/* New Footer Contact Section */}
-      <section id="contact-form" className="py-20 md:py-32 px-4 md:px-6 bg-gray-50 border-t border-gray-100">
+      <section id="contact-form" className="py-16 md:py-32 px-3 md:px-6 bg-gray-50 border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             
@@ -187,7 +187,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
             </div>
 
             {/* The Form */}
-            <div className="bg-white p-6 md:p-16 rounded-[2.5rem] md:rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-gray-100">
+            <div className="bg-white p-4 md:p-16 rounded-[1.5rem] md:rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-gray-100">
               <VisaContactForm visaType={title} />
             </div>
 
@@ -200,15 +200,15 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 pointer-events-none"
+        className="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-[100] pointer-events-none"
       >
         <button 
           onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-          className="pointer-events-auto flex items-center gap-3 md:gap-4 bg-dark text-white px-5 py-3 md:px-8 md:py-5 rounded-full shadow-[0_30px_100px_rgba(0,0,0,0.3)] border border-white/10 hover:bg-primary transition-all group"
+          className="pointer-events-auto flex items-center gap-3 md:gap-4 bg-dark text-white px-4 py-2.5 md:px-8 md:py-5 rounded-full shadow-[0_30px_100px_rgba(0,0,0,0.3)] border border-white/10 hover:bg-primary transition-all group scale-90 md:scale-100"
         >
-          <span className="font-heading font-black text-[8px] md:text-[9px] tracking-[0.4em] uppercase whitespace-nowrap">Apply Now</span>
-          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all">
-            <span className="text-lg md:text-xl">→</span>
+          <span className="font-heading font-black text-[7px] md:text-[9px] tracking-[0.4em] uppercase whitespace-nowrap">Apply Now</span>
+          <div className="w-6 h-6 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all">
+            <span className="text-sm md:text-xl">→</span>
           </div>
         </button>
       </motion.div>
