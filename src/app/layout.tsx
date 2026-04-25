@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -102,7 +104,9 @@ export default function RootLayout({
             {children}
           </LayoutWrapper>
         </SmoothScroll>
+        <SpeedInsights />
       </body>
+
     </html>
   );
 }
