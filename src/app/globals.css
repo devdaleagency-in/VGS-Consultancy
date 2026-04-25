@@ -117,7 +117,7 @@ body {
 
 /* iOS 26 Liquid Glass Navbar */
 .nav-liquid-glass {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(35px) saturate(210%);
   -webkit-backdrop-filter: blur(35px) saturate(210%);
   border: 1px solid rgba(255, 255, 255, 0.4);
