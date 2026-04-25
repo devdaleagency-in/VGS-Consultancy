@@ -125,13 +125,13 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
               className="text-center"
             >
               <h2 className="text-5xl md:text-7xl font-heading font-black text-dark mb-12 tracking-tighter">Why Choose VGS for <br/> your {title}?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left">
                 {features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-6 p-8 bg-gray-50/50 rounded-[2.5rem] border border-gray-100 hover:border-primary/30 transition-all group hover:bg-white hover:shadow-2xl">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+                  <div key={i} className="flex items-center gap-4 md:gap-6 p-6 md:p-8 bg-gray-50/50 rounded-[2rem] md:rounded-[2.5rem] border border-gray-100 hover:border-primary/30 transition-all group hover:bg-white hover:shadow-2xl">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
                        ✓
                     </div>
-                    <span className="font-black text-dark text-xl">{feature}</span>
+                    <span className="font-black text-dark text-lg md:text-xl">{feature}</span>
                   </div>
                 ))}
               </div>

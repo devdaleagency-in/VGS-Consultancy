@@ -352,7 +352,7 @@ export default function StudyVisaPage() {
         {/* Destination Explorer - Full Width */}
         <div className="text-center max-w-4xl mx-auto">
           <h3 className="text-3xl md:text-5xl font-heading font-black text-dark mb-10 tracking-tight italic">Explore Your Next <span className="text-primary tracking-normal">Chapter.</span></h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {countries.map((c) => (
               <button
                 key={c.id}
@@ -360,16 +360,16 @@ export default function StudyVisaPage() {
                   setSelectedCountry(c.id);
                   setActiveSectionId("1"); // Reset accordion to first section on country change
                 }}
-                className={`px-8 py-4 rounded-[1.5rem] font-black text-sm md:text-base transition-all border flex items-center gap-4 ${
+                className={`px-5 py-3 md:px-8 md:py-4 rounded-[1.25rem] md:rounded-[1.5rem] font-black text-xs md:text-base transition-all border flex items-center gap-2 md:gap-4 ${
                   selectedCountry === c.id
-                    ? 'bg-primary text-white border-primary shadow-2xl scale-110 z-10'
+                    ? 'bg-primary text-white border-primary shadow-2xl scale-105 md:scale-110 z-10'
                     : 'bg-white text-gray-400 border-gray-100 hover:border-primary/30 hover:text-primary hover:shadow-lg'
                 }`}
               >
                 <img 
                   src={`https://flagcdn.com/w80/${c.code}.png`} 
                   alt={c.name}
-                  className="w-8 h-8 rounded-full object-cover border-2 border-white/20 shadow-sm"
+                  className="w-6 h-6 md:w-8 md:h-8 rounded-full object-cover border-2 border-white/20 shadow-sm"
                 />
                 {c.name}
               </button>
@@ -385,7 +385,7 @@ export default function StudyVisaPage() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-[4rem] p-8 md:p-20 shadow-[0_50px_100px_rgba(0,0,0,0.03)] border border-gray-50"
+              className="bg-white rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-20 shadow-[0_50px_100px_rgba(0,0,0,0.03)] border border-gray-50"
             >
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-6xl font-heading font-black text-dark mb-8 tracking-tighter uppercase">
@@ -408,20 +408,20 @@ export default function StudyVisaPage() {
                         {/* Header / Trigger */}
                         <button 
                           onClick={() => setActiveSectionId(isOpen ? null : section.id)}
-                          className="w-full flex items-center gap-6 p-8 md:p-10 text-left"
+                          className="w-full flex items-center gap-4 md:gap-6 p-6 md:p-10 text-left"
                         >
-                          <span className={`w-14 h-14 rounded-2xl flex items-center justify-center font-black text-xl shadow-lg transition-all duration-500 ${
+                          <span className={`w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center font-black text-lg md:text-xl shadow-lg transition-all duration-500 ${
                             isOpen ? 'bg-primary text-white rotate-[360deg]' : 'bg-gray-100 text-gray-400'
                           }`}>
                             {section.id}
                           </span>
-                          <h3 className="text-2xl md:text-3xl font-heading font-black text-dark tracking-tighter flex-1">
+                          <h3 className="text-xl md:text-3xl font-heading font-black text-dark tracking-tighter flex-1">
                             {section.title}
                           </h3>
-                          <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
+                          <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
                             isOpen ? 'border-primary text-primary rotate-180' : 'border-gray-200 text-gray-300'
                           }`}>
-                            <span className="text-xl font-black">{isOpen ? '−' : '+'}</span>
+                            <span className="text-lg md:text-xl font-black">{isOpen ? '−' : '+'}</span>
                           </div>
                         </button>
 
@@ -460,22 +460,22 @@ export default function StudyVisaPage() {
                             >
                               <div className="px-8 md:px-10 pb-12 pt-0">
                                 {section.points ? (
-                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ml-4 md:ml-10 pl-8 md:pl-12 border-l-2 border-primary/20">
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 md:ml-10 md:pl-12 md:border-l-2 border-primary/20">
                                     {section.points.map((point, idx) => (
                                       <motion.div 
                                         key={idx}
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: idx * 0.1 + 0.3 }}
-                                        className="space-y-4 p-6 rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all group"
+                                        className="space-y-3 md:space-y-4 p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all group"
                                       >
-                                        <div className="flex items-center gap-4">
-                                          <span className="text-2xl group-hover:scale-125 transition-transform duration-500">{point.icon}</span>
-                                          <h4 className="text-lg font-black text-dark uppercase tracking-widest">
+                                        <div className="flex items-center gap-3 md:gap-4">
+                                          <span className="text-xl md:text-2xl group-hover:scale-125 transition-transform duration-500">{point.icon}</span>
+                                          <h4 className="text-base md:text-lg font-black text-dark uppercase tracking-widest">
                                             {point.subtitle}
                                           </h4>
                                         </div>
-                                        <p className="text-gray-500 font-medium leading-relaxed text-base">
+                                        <p className="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
                                           {point.text}
                                         </p>
                                       </motion.div>
