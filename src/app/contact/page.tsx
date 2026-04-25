@@ -102,7 +102,7 @@ function ContactContent() {
   };
 
   return (
-    <div className="pt-24 min-h-screen bg-white">
+    <div className="pt-32 md:pt-40 min-h-screen bg-white">
       {/* Header */}
       <section className="py-20 bg-primary/5">
         <div className="max-w-[1400px] mx-auto px-4 text-center">
@@ -119,7 +119,7 @@ function ContactContent() {
             transition={{ delay: 0.1 }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Have questions about studying abroad? Book a free consultation with our experts today.
+            Have questions about studying abroad? Book a free expert session with our team today.
           </motion.p>
         </div>
       </section>
@@ -203,7 +203,7 @@ function ContactContent() {
               viewport={{ once: true }}
               className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-elevated border border-gray-100"
             >
-              <h2 className="text-3xl font-heading font-bold text-dark mb-4">Book Free Consultation</h2>
+              <h2 className="text-3xl font-heading font-bold text-dark mb-4">Book Expert Session</h2>
               <p className="text-gray-500 mb-10">Fill out the form and our expert counselor will contact you within 24 hours.</p>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

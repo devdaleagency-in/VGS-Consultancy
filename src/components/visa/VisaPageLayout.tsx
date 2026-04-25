@@ -94,17 +94,17 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
       </section>
 
       {/* Stats Section */}
-      <section className="stats-section relative z-20 -mt-24 px-6">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <section className="stats-section relative z-20 -mt-24 px-4 md:px-6">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="stat-card bg-white p-10 rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col items-center text-center group hover:bg-primary transition-all duration-700"
+              className="stat-card bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col items-center text-center group hover:bg-primary transition-all duration-700"
             >
-              <span className="text-4xl font-heading font-black text-primary group-hover:text-white transition-colors mb-3">
+              <span className="text-3xl md:text-4xl font-heading font-black text-primary group-hover:text-white transition-colors mb-2 md:mb-3">
                 {stat.value}
               </span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 group-hover:text-white/60 transition-colors">
+              <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-gray-400 group-hover:text-white/60 transition-colors">
                 {stat.label}
               </span>
             </div>
@@ -156,7 +156,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
                   Your Global Future <br/> Starts <span className="text-primary italic font-accent">Here.</span>
                 </h2>
                 <p className="text-xl text-gray-500 font-medium leading-relaxed max-w-lg">
-                  VGS Consultancy is dedicated to providing world-class guidance for students and professionals looking to expand their horizons. Our expertise ensures your journey is smooth and successful.
+                  VGS Global is dedicated to providing world-class guidance for students and professionals looking to expand their horizons. Our expertise ensures your journey is smooth and successful.
                 </p>
               </div>
 
@@ -164,8 +164,8 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
                 <div>
                   <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-4">Contact Details</h4>
                   <div className="space-y-4">
-                    <p className="text-lg font-bold text-dark">+1 (234) 567-890</p>
-                    <p className="text-lg font-bold text-dark">info@vgsconsultancy.com</p>
+                    <p className="text-lg font-bold text-dark">+91 80968 32850</p>
+                    <p className="text-lg font-bold text-dark">info@vgsglobal.in</p>
                   </div>
                 </div>
                 <div>
@@ -200,15 +200,15 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-10 right-10 z-50 pointer-events-none"
+        className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 pointer-events-none"
       >
         <button 
           onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-          className="pointer-events-auto flex items-center gap-4 bg-dark text-white px-8 py-5 rounded-full shadow-[0_30px_100px_rgba(0,0,0,0.3)] border border-white/10 hover:bg-primary transition-all group"
+          className="pointer-events-auto flex items-center gap-3 md:gap-4 bg-dark text-white px-5 py-3 md:px-8 md:py-5 rounded-full shadow-[0_30px_100px_rgba(0,0,0,0.3)] border border-white/10 hover:bg-primary transition-all group"
         >
-          <span className="font-heading font-black text-[9px] tracking-[0.4em] uppercase whitespace-nowrap">Apply Now</span>
-          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all">
-            <span className="text-xl">→</span>
+          <span className="font-heading font-black text-[8px] md:text-[9px] tracking-[0.4em] uppercase whitespace-nowrap">Apply Now</span>
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all">
+            <span className="text-lg md:text-xl">→</span>
           </div>
         </button>
       </motion.div>

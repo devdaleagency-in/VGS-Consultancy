@@ -186,6 +186,7 @@ export default function AboutPage() {
                     </span>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-10 bg-gradient-to-t from-dark/90 to-transparent translate-y-6 group-hover:translate-y-0 transition-all duration-500">
+                    <p className="text-white/60 mb-8 font-medium text-sm md:text-lg">Get personalized advice from our global experts.</p>
                     <p className="text-white/60 text-xs font-medium leading-relaxed italic opacity-0 group-hover:opacity-100 transition-opacity">
                       "{member.bio}"
                     </p>
@@ -243,7 +244,7 @@ export default function AboutPage() {
             href="/contact?type=Student" 
             className="inline-flex items-center gap-6 bg-primary text-white px-12 py-6 rounded-full font-black text-xs uppercase tracking-[0.3em] hover:bg-dark transition-all group shadow-2xl"
           >
-            Book Free Consultation 
+            Book Expert Session 🚀
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-dark transition-all">
               →
             </div>

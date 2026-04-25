@@ -34,6 +34,15 @@ const destinations = [
     tag: "PR Priority"
   },
   {
+    name: "Australia",
+    code: "au",
+    stats: "40+ Universities",
+    visa: "96% Success",
+    image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800",
+    href: "/destinations/australia",
+    tag: "Student Life"
+  },
+  {
     name: "Germany",
     code: "de",
     stats: "80+ Universities",
@@ -41,6 +50,33 @@ const destinations = [
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800",
     href: "/destinations/germany",
     tag: "Tuition Free"
+  },
+  {
+    name: "France",
+    code: "fr",
+    stats: "70+ Institutions",
+    visa: "93% Success",
+    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800",
+    href: "/destinations/france",
+    tag: "Tech Leader"
+  },
+  {
+    name: "New Zealand",
+    code: "nz",
+    stats: "8 Universities",
+    visa: "95% Success",
+    image: "https://images.unsplash.com/photo-1589330273594-fade1ee91647?auto=format&fit=crop&q=80&w=800",
+    href: "/destinations/newzealand",
+    tag: "Global Safety"
+  },
+  {
+    name: "Ireland",
+    code: "ie",
+    stats: "30+ Institutions",
+    visa: "96% Success",
+    image: "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&q=80&w=800",
+    href: "/destinations/ireland",
+    tag: "English Hub"
   }
 ];
 
@@ -203,9 +239,9 @@ function CountryCard({ country, index }: { country: any, index: number }) {
       {/* Reveal Info Content */}
       <div className="absolute inset-x-6 bottom-8 md:inset-x-10 md:bottom-10">
         <motion.h3 
-          animate={showContent ? { y: -160, scale: 1.05 } : { y: 0, scale: 1 }}
+          animate={showContent ? { y: isMobile ? -130 : -160, scale: 1.05 } : { y: 0, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="text-4xl md:text-5xl font-heading font-black text-white mb-6 md:mb-8 origin-left"
+          className="text-3xl md:text-5xl font-heading font-black text-white mb-6 md:mb-8 origin-left"
         >
           {country.name}
         </motion.h3>

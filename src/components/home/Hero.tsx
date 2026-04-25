@@ -17,7 +17,7 @@ const Globe = dynamic(() => import('./Globe'), {
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-20 pb-12 md:pt-24 md:pb-20 bg-white overflow-x-hidden">
+    <section className="relative w-full pt-28 pb-12 md:pt-40 md:pb-24 bg-white overflow-x-hidden selection:bg-primary/20">
       {/* Decorative Atmospheric Layers based on Reference - 50% Melt */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {/* Main Reference Gradient - 50% Height */}

@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-dark mb-4">1. Introduction</h2>
             <p>
-              Welcome to VGS Global Educational Consultancy. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at info@vgs.ind.in.
+              Welcome to VGS Global Educational Experts. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at info@vgs.ind.in.
             </p>
           </section>
 

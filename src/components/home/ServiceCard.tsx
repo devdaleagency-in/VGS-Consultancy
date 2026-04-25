@@ -74,11 +74,26 @@ export default function ServiceCard({ icon, title, description, link, index }: S
 
       {/* Floating Animated Icon */}
       <motion.div 
-        animate={isHovered ? { y: -10, scale: 1.15 } : { y: 0, scale: 1 }}
-        transition={{ type: "spring", stiffness: 100, damping: 10 }}
+        animate={isHovered ? { 
+          y: [-10, -15, -10],
+          scale: 1.15,
+          rotate: [0, -10, 10, 0]
+        } : { 
+          y: [0, -5, 0],
+          scale: 1,
+          rotate: 0
+        }}
+        transition={isHovered ? {
+          y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+          rotate: { duration: 0.5 },
+          scale: { type: "spring", stiffness: 400, damping: 10 }
+        } : {
+          y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
+          duration: 0.5
+        }}
         className="relative z-10 mb-10 w-24 h-24 flex items-center justify-center rounded-[2rem] bg-gray-50 group-hover:bg-primary transition-all duration-500 shadow-inner group-hover:shadow-glow-lg"
       >
-        <span className="text-5xl relative z-10 filter group-hover:drop-shadow-lg transition-all">
+        <span className="text-5xl relative z-10 filter group-hover:drop-shadow-lg transition-all select-none">
           {icon}
         </span>
         

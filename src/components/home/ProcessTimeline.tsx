@@ -6,7 +6,7 @@ import TextReveal from '@/components/ui/TextReveal';
 
 const steps = [
   {
-    title: "Free Consultation",
+    title: "Free Expert Advice",
     desc: "In-depth profile evaluation to understand your goals, aspirations, and academic potential.",
     icon: "🤝",
     color: "from-primary/20 to-transparent"

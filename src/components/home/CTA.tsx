@@ -77,7 +77,7 @@ export default function CTA() {
             className="text-xl md:text-2xl text-gray-500 font-bold mb-16 max-w-3xl mx-auto leading-relaxed relative z-10"
           >
             <Typewriter 
-              text="Join 500+ successful students who unlocked their potential with India's premium educational consultancy. Your dream university is waiting."
+              text="Join 50+ successful students who unlocked their potential with India's premium educational partners. Your dream university is waiting."
               delay={0.8}
               speed={0.03}
             />
@@ -86,7 +86,7 @@ export default function CTA() {
           <div className="flex flex-wrap justify-center gap-8 items-center">
             <MagneticButton>
               <ModernButton onClick={() => window.location.href = '/contact'} className="!px-16 !py-8 !text-2xl">
-                Book Consultation
+                Book Expert Session
               </ModernButton>
             </MagneticButton>
 

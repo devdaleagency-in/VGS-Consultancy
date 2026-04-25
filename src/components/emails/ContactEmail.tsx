@@ -41,7 +41,7 @@ export const AdminEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         <Section style={content}>
           <Heading style={h1}>New Inquiry Received</Heading>
           <Text style={paragraph}>
-            Hi Team, a new consultation request has been submitted through the website.
+            Hi Team, a new expert advice request has been submitted through the website.
           </Text>
           
           <Section style={infoCard}>
@@ -112,7 +112,7 @@ export const UserEmailTemplate: React.FC<Readonly<{ name: string }>> = ({ name }
           </Text>
           
           <Text style={paragraph}>
-            Our expert counselor will review your requirements and reach out to you within 24 hours to book your free one-on-one consultation.
+            Our expert counselor will review your requirements and reach out to you within 24 hours to book your free one-on-one session.
           </Text>
 
           <Section style={nextSteps}>
@@ -134,7 +134,7 @@ export const UserEmailTemplate: React.FC<Readonly<{ name: string }>> = ({ name }
 
         <Section style={footerSection}>
           <Text style={footerText}>
-            VGS Global - Study Abroad Consultancy <br />
+            VGS Global - Study Abroad Experts <br />
             Beyond Boundaries Beyond Limits
           </Text>
           <Hr style={hr} />

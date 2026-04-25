@@ -8,7 +8,7 @@ const destinations = [
     slug: "uk",
     name: "United Kingdom",
     fullName: "England, Scotland, Wales & NI",
-    flag: "🇬🇧",
+    code: "gb",
     accent: "#2563EB",
     desc: "Home to world-renowned universities like Oxford and Cambridge, offering 1-year Masters and post-study work visas.",
     benefits: ["1 Year Masters", "Post Study Work", "Research Excellence"],
@@ -18,7 +18,7 @@ const destinations = [
     slug: "usa",
     name: "United States",
     fullName: "United States of America",
-    flag: "🇺🇸",
+    code: "us",
     accent: "#B22234",
     desc: "The global hub for innovation and research with the largest number of top-ranked universities in the world.",
     benefits: ["STEM OPT Hub", "Extensive Funding", "Silicon Valley Links"],
@@ -28,37 +28,57 @@ const destinations = [
     slug: "canada",
     name: "Canada",
     fullName: "The Great White North",
-    flag: "🇨🇦",
+    code: "ca",
     accent: "#FF0000",
     desc: "Known for its high quality of life, friendly environment, and excellent post-graduation work opportunities.",
     benefits: ["Easy PR Pathway", "Work while Study", "Co-op Programs"],
     image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=800"
   },
   {
-    slug: "germany",
-    name: "Germany",
-    fullName: "Engine of Europe",
-    flag: "🇩🇪",
-    accent: "#000000",
-    desc: "Tuition-free education in public universities and a powerhouse for engineering and technology.",
-    benefits: ["Public Uni €0", "Industrial Power", "Innovation Leader"],
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800"
-  },
-  {
     slug: "australia",
     name: "Australia",
     fullName: "The Land Down Under",
-    flag: "🇦🇺",
+    code: "au",
     accent: "#00008B",
     desc: "World-class education system with a focus on practical learning and impressive student lifestyles.",
     benefits: ["Regional Points", "Student Life", "PSW Work Rights"],
     image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800"
   },
   {
+    slug: "germany",
+    name: "Germany",
+    fullName: "Engine of Europe",
+    code: "de",
+    accent: "#000000",
+    desc: "Tuition-free education in public universities and a powerhouse for engineering and technology.",
+    benefits: ["Public Uni €0", "Industrial Power", "Innovation Leader"],
+    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    slug: "france",
+    name: "France",
+    fullName: "Gateway to Europe",
+    code: "fr",
+    accent: "#0055A4",
+    desc: "A leader in technology and culture, offering top-tier Grandes Écoles and world-class research opportunities.",
+    benefits: ["Grandes Écoles", "Tech Leader", "Cultural Richness"],
+    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    slug: "newzealand",
+    name: "New Zealand",
+    fullName: "Aotearoa",
+    code: "nz",
+    accent: "#00247D",
+    desc: "Ranked among the safest countries globally, offering practical learning and an exceptional lifestyle.",
+    benefits: ["Global Safety", "Practical Skills", "Work Balance"],
+    image: "https://images.unsplash.com/photo-1589330273594-fade1ee91647?auto=format&fit=crop&q=80&w=800"
+  },
+  {
     slug: "ireland",
     name: "Ireland",
     fullName: "The Emerald Isle",
-    flag: "🇮🇪",
+    code: "ie",
     accent: "#009A44",
     desc: "Europe's tech hub with a welcoming culture and strong emphasis on research and innovation.",
     benefits: ["Tech Hub Base", "Post-Study Stay", "English Speaking"],
@@ -131,8 +151,12 @@ export default function DestinationsPage() {
                 {/* Content */}
                 <div className="absolute inset-0 p-10 flex flex-col justify-end z-10 transition-transform duration-700 group-hover:-translate-y-4">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-4xl shadow-xl group-hover:bg-primary transition-all duration-500">
-                      {country.flag}
+                    <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shadow-xl group-hover:bg-primary transition-all duration-500 overflow-hidden p-2">
+                      <img 
+                        src={`https://flagcdn.com/w160/${country.code}.png`} 
+                        alt={country.name}
+                        className="w-full h-full object-contain rounded-sm scale-110" 
+                      />
                     </div>
                     <div className="flex flex-col">
                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50">{country.fullName}</span>

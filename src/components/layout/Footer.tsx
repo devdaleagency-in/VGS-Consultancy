@@ -25,6 +25,7 @@ const footerLinks = {
   company: [
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
@@ -65,7 +66,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Beyond Boundaries, Beyond Limits. Your trusted partner for international education consultancy since 2014.
+              Beyond Boundaries, Beyond Limits. Your trusted partner for international education experts.
             </p>
             <div className="space-y-3">
               <a href="tel:+918096832850" className="flex items-center gap-3 text-sm text-gray-400 hover:text-primary transition-colors">
@@ -203,7 +204,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} VGS Global Educational Consultancy. All rights reserved.
+            © {new Date().getFullYear()} VGS Global Educational Experts. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
             Founded by <span className="text-primary-light">Vineetha Medisetti</span>

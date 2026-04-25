@@ -5,10 +5,22 @@
     "banner": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=2000",
     "description": "The UK is home to some of the world's oldest and most prestigious universities. With a rich academic heritage and diverse culture, the UK offers an unparalleled educational experience.",
     "stats": [
-      { "label": "Universities", "value": "150+" },
-      { "label": "Intakes", "value": "Sept / Jan" },
-      { "label": "Post-study Work", "value": "2 Years" },
-      { "label": "Success Rate", "value": "98%" }
+      {
+        "label": "Universities",
+        "value": "150+"
+      },
+      {
+        "label": "Intakes",
+        "value": "Sept / Jan"
+      },
+      {
+        "label": "Post-study Work",
+        "value": "2 Years"
+      },
+      {
+        "label": "Success Rate",
+        "value": "98%"
+      }
     ],
     "features": [
       "Top-tier Global Rankings",
@@ -17,10 +29,22 @@
       "Generous Scholarship Options"
     ],
     "programs": [
-      { "title": "Business & Management", "level": "Undergraduate & Graduate" },
-      { "title": "Computer Science & AI", "level": "Graduate Research" },
-      { "title": "Healthcare & Medicine", "level": "Professional Degrees" },
-      { "title": "Engineering & Tech", "level": "Hands-on Innovation" }
+      {
+        "title": "Business & Management",
+        "level": "Undergraduate & Graduate"
+      },
+      {
+        "title": "Computer Science & AI",
+        "level": "Graduate Research"
+      },
+      {
+        "title": "Healthcare & Medicine",
+        "level": "Professional Degrees"
+      },
+      {
+        "title": "Engineering & Tech",
+        "level": "Hands-on Innovation"
+      }
     ]
   },
   "usa": {
@@ -29,10 +53,22 @@
     "banner": "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&q=80&w=2000",
     "description": "The United States is a global leader in higher education, offering a vast array of programs and research opportunities at world-renowned institutions.",
     "stats": [
-      { "label": "Universities", "value": "4000+" },
-      { "label": "Intakes", "value": "Aug / Jan" },
-      { "label": "STEM OPT", "value": "3 Years" },
-      { "label": "Success Rate", "value": "95%" }
+      {
+        "label": "Universities",
+        "value": "4000+"
+      },
+      {
+        "label": "Intakes",
+        "value": "Aug / Jan"
+      },
+      {
+        "label": "STEM OPT",
+        "value": "3 Years"
+      },
+      {
+        "label": "Success Rate",
+        "value": "95%"
+      }
     ],
     "features": [
       "Ivy League Institutions",
@@ -41,10 +77,22 @@
       "Diverse Networking"
     ],
     "programs": [
-      { "title": "Tech & Silicon Valley", "level": "Graduate Tech" },
-      { "title": "MBA & Finance", "level": "Elite Business" },
-      { "title": "Biotechnology", "level": "Research Lab" },
-      { "title": "Media & Arts", "level": "Creative Industry" }
+      {
+        "title": "Tech & Silicon Valley",
+        "level": "Graduate Tech"
+      },
+      {
+        "title": "MBA & Finance",
+        "level": "Elite Business"
+      },
+      {
+        "title": "Biotechnology",
+        "level": "Research Lab"
+      },
+      {
+        "title": "Media & Arts",
+        "level": "Creative Industry"
+      }
     ]
   },
   "canada": {
@@ -53,10 +101,22 @@
     "banner": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=2000",
     "description": "Canada is known for its high-quality education, safe environment, and excellent post-graduation work opportunities and immigration pathways.",
     "stats": [
-      { "label": "Colleges", "value": "100+" },
-      { "label": "Intakes", "value": "Sept / Jan / May" },
-      { "label": "PGWP", "value": "Up to 3 Years" },
-      { "label": "Success Rate", "value": "94%" }
+      {
+        "label": "Colleges",
+        "value": "100+"
+      },
+      {
+        "label": "Intakes",
+        "value": "Sept / Jan / May"
+      },
+      {
+        "label": "PGWP",
+        "value": "Up to 3 Years"
+      },
+      {
+        "label": "Success Rate",
+        "value": "94%"
+      }
     ],
     "features": [
       "Permanent Residency Paths",
@@ -65,10 +125,22 @@
       "High Living Standards"
     ],
     "programs": [
-      { "title": "Hospitality & Tourism", "level": "Applied Arts" },
-      { "title": "Data Science", "level": "Advanced Tech" },
-      { "title": "Environmental Science", "level": "Sustainable Dev" },
-      { "title": "Supply Chain", "level": "Logistics Expert" }
+      {
+        "title": "Hospitality & Tourism",
+        "level": "Applied Arts"
+      },
+      {
+        "title": "Data Science",
+        "level": "Advanced Tech"
+      },
+      {
+        "title": "Environmental Science",
+        "level": "Sustainable Dev"
+      },
+      {
+        "title": "Supply Chain",
+        "level": "Logistics Expert"
+      }
     ]
   },
   "germany": {
@@ -77,10 +149,22 @@
     "banner": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=2000",
     "description": "Germany offers world-class education with little to no tuition fees at public universities, making it a top choice for international students.",
     "stats": [
-      { "label": "Public Unis", "value": "300+" },
-      { "label": "Intakes", "value": "Oct / April" },
-      { "label": "Job Search Visa", "value": "18 Months" },
-      { "label": "Success Rate", "value": "97%" }
+      {
+        "label": "Public Unis",
+        "value": "300+"
+      },
+      {
+        "label": "Intakes",
+        "value": "Oct / April"
+      },
+      {
+        "label": "Job Search Visa",
+        "value": "18 Months"
+      },
+      {
+        "label": "Success Rate",
+        "value": "97%"
+      }
     ],
     "features": [
       "Zero Tuition Fees",
@@ -89,10 +173,214 @@
       "High Tech Innovation"
     ],
     "programs": [
-      { "title": "Automotive Engineering", "level": "Advanced Engineering" },
-      { "title": "Industrial Design", "level": "Modern Arts" },
-      { "title": "Green Energy", "level": "Sustainable Tech" },
-      { "title": "Robotics", "level": "Automation Research" }
+      {
+        "title": "Automotive Engineering",
+        "level": "Advanced Engineering"
+      },
+      {
+        "title": "Industrial Design",
+        "level": "Modern Arts"
+      },
+      {
+        "title": "Green Energy",
+        "level": "Sustainable Tech"
+      },
+      {
+        "title": "Robotics",
+        "level": "Automation Research"
+      }
+    ]
+  },
+  "australia": {
+    "name": "Australia",
+    "fullName": "Study in Australia",
+    "banner": "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=2000",
+    "description": "Australia offers a diverse range of study options for international students, with more than 1,100 institutions and 22,000 courses to choose from.",
+    "stats": [
+      {
+        "label": "Universities",
+        "value": "40+"
+      },
+      {
+        "label": "Intakes",
+        "value": "Feb / July"
+      },
+      {
+        "label": "PSW Rights",
+        "value": "Up to 4 Years"
+      },
+      {
+        "label": "Success Rate",
+        "value": "96%"
+      }
+    ],
+    "features": [
+      "Global Education Hub",
+      "Diverse Student Life",
+      "Part-time Work Rights",
+      "High Living Standard"
+    ],
+    "programs": [
+      {
+        "title": "Nursing & Healthcare",
+        "level": "Clinical Practice"
+      },
+      {
+        "title": "Engineering & Mining",
+        "level": "Hands-on Training"
+      },
+      {
+        "title": "Information Technology",
+        "level": "Tech Innovation"
+      },
+      {
+        "title": "Architecture",
+        "level": "Sustainable Design"
+      }
+    ]
+  },
+  "france": {
+    "name": "France",
+    "fullName": "Study in France",
+    "banner": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=2000",
+    "description": "France is a leading destination for international students, known for its high-quality education, research, and cultural heritage.",
+    "stats": [
+      {
+        "label": "Institutions",
+        "value": "3500+"
+      },
+      {
+        "label": "Intakes",
+        "value": "Sept / Feb"
+      },
+      {
+        "label": "Stay Back",
+        "value": "2 Years"
+      },
+      {
+        "label": "Success Rate",
+        "value": "93%"
+      }
+    ],
+    "features": [
+      "Grandes Écoles Network",
+      "European Tech Hub",
+      "Cultural Enrichment",
+      "Affordable Living"
+    ],
+    "programs": [
+      {
+        "title": "Luxury Management",
+        "level": "Elite Business"
+      },
+      {
+        "title": "Aerospace Engineering",
+        "level": "High-tech Research"
+      },
+      {
+        "title": "Gastronomy & Arts",
+        "level": "Creative Industry"
+      },
+      {
+        "title": "International Relations",
+        "level": "Global Policy"
+      }
+    ]
+  },
+  "newzealand": {
+    "name": "New Zealand",
+    "fullName": "Study in New Zealand",
+    "banner": "https://images.unsplash.com/photo-1589330273594-fade1ee91647?auto=format&fit=crop&q=80&w=2000",
+    "description": "New Zealand is a safe and beautiful country with a world-class education system and a focus on practical, research-based learning.",
+    "stats": [
+      {
+        "label": "Universities",
+        "value": "8"
+      },
+      {
+        "label": "Intakes",
+        "value": "Feb / July"
+      },
+      {
+        "label": "PSW",
+        "value": "Up to 3 Years"
+      },
+      {
+        "label": "Success Rate",
+        "value": "95%"
+      }
+    ],
+    "features": [
+      "Global Safety Leader",
+      "Practical Learning",
+      "Stunning Nature",
+      "Innovation Focused"
+    ],
+    "programs": [
+      {
+        "title": "Environmental Science",
+        "level": "Sustainability"
+      },
+      {
+        "title": "Film & Animation",
+        "level": "Creative Tech"
+      },
+      {
+        "title": "Marine Biology",
+        "level": "Ocean Research"
+      },
+      {
+        "title": "Information Systems",
+        "level": "Applied Tech"
+      }
+    ]
+  },
+  "ireland": {
+    "name": "Ireland",
+    "fullName": "Study in Ireland",
+    "banner": "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&q=80&w=2000",
+    "description": "Ireland is Europe's tech hub, offering a friendly environment and a strong emphasis on research and innovation.",
+    "stats": [
+      {
+        "label": "Institutions",
+        "value": "30+"
+      },
+      {
+        "label": "Intakes",
+        "value": "Sept / Jan"
+      },
+      {
+        "label": "Stay Back",
+        "value": "2 Years"
+      },
+      {
+        "label": "Success Rate",
+        "value": "96%"
+      }
+    ],
+    "features": [
+      "English Speaking Hub",
+      "Tech Giant HQ Base",
+      "Rich Literary History",
+      "Friendly Communities"
+    ],
+    "programs": [
+      {
+        "title": "Software Engineering",
+        "level": "Tech Mastery"
+      },
+      {
+        "title": "Pharmaceuticals",
+        "level": "Life Science"
+      },
+      {
+        "title": "Financial Services",
+        "level": "Modern Banking"
+      },
+      {
+        "title": "Digital Marketing",
+        "level": "Media Growth"
+      }
     ]
   }
 }
