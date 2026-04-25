@@ -84,6 +84,7 @@ export const metadata: Metadata = {
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import { Toaster } from "sonner";
 import Preloader from "@/components/layout/Preloader";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 
@@ -102,6 +103,7 @@ export default function RootLayout({
             {children}
           </LayoutWrapper>
         </SmoothScroll>
+        <SpeedInsights />
       </body>
     </html>
   );
