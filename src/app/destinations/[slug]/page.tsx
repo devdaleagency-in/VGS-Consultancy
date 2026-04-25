@@ -129,10 +129,10 @@ export default function DestinationDetailPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="p-8 md:p-12 lg:p-16 bg-dark rounded-[2.5rem] md:rounded-[4rem] text-white relative overflow-hidden group shadow-2xl mt-16"
+                  className="p-5 md:p-12 lg:p-16 bg-dark rounded-[2rem] md:rounded-[4rem] text-white relative overflow-hidden group shadow-2xl mt-16"
                   id="apply-form"
                 >
-                  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-24 items-center">
                     <div className="text-center md:text-left">
                       <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
