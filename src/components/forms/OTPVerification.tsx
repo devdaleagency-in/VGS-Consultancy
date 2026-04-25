@@ -111,35 +111,35 @@ export default function OTPVerification({ email, onVerified }: OTPVerificationPr
             key="verify"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col gap-3"
+            className="flex items-end gap-2"
           >
-            <div className="flex-1 w-full space-y-1">
-              <label className="text-[9px] font-black uppercase tracking-widest text-dark/40 ml-4">Enter 6-digit Code</label>
+            <div className="flex-1 space-y-1">
+              <label className="text-[9px] font-black uppercase tracking-widest text-dark/40 ml-4">6-Digit Code</label>
               <input
                 type="text"
                 maxLength={6}
                 value={otp}
                 onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
                 placeholder="000000"
-                className="w-full px-6 py-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all font-black text-center text-lg tracking-[0.5em] outline-none"
+                className="w-full px-4 py-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all font-black text-center text-base tracking-[0.3em] outline-none h-[50px]"
               />
             </div>
-            <div className="flex gap-2 w-full">
+            <div className="flex gap-2 shrink-0">
               <button
                 type="button"
                 onClick={verifyOTP}
                 disabled={loading || otp.length !== 6}
-                className="flex-1 px-4 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-primary-dark transition-all disabled:opacity-50 h-[50px]"
+                className="px-4 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-primary-dark transition-all disabled:opacity-50 h-[50px] min-w-[100px]"
               >
-                {loading ? '...' : 'Verify Code'}
+                {loading ? '...' : 'Verify'}
               </button>
               <button
                 type="button"
                 onClick={sendOTP}
                 disabled={loading || countdown > 0}
-                className="px-4 py-3 bg-gray-100 text-gray-400 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-gray-200 transition-all disabled:opacity-50 h-[50px]"
+                className="px-3 py-3 bg-gray-100 text-gray-400 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-gray-200 transition-all disabled:opacity-50 h-[50px]"
               >
-                {countdown > 0 ? countdown : 'Resend'}
+                {countdown > 0 ? countdown : '↺'}
               </button>
             </div>
           </motion.div>
