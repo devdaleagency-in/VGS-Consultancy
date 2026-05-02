@@ -22,9 +22,18 @@
   --color-dark: #212529;
   --color-dark-light: #343A40;
 
-  --font-heading: var(--font-montserrat), "sans-serif";
-  --font-body: var(--font-inter), "sans-serif";
   --font-accent: var(--font-playfair), "serif";
+
+  --animate-gradient-shift: gradient-shift 15s ease infinite;
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  --shadow-card: 0 20px 50px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 50px 100px -20px rgba(37, 99, 235, 0.25), 0 0 0 1px rgba(37, 99, 235, 0.15);
 }
 
 /* Base Styles */
@@ -93,11 +102,67 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-card);
+}
+
 /* Animated Gradient Background */
 .animated-gradient {
   background: linear-gradient(-45deg, #e6f2ff, #ffffff, #cce5ff, #f8f9fa);
-  background-size: 400% 400%;
+  background-size: 200% 200%;
   animation: gradientBG 15s ease infinite;
+}
+
+.premium-form-gradient {
+  background: linear-gradient(
+    -45deg, 
+    #85ffab, 
+    #c6daf2, 
+    #f8faff, 
+    #c5d1d982
+  );
+  background-size: 200% 200%;
+  animation: premiumGradient 15s ease infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes premiumGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.premium-form-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/vgsLogo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+  filter: brightness(1.2);
+}
+
+.premium-form-gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 @keyframes gradientBG {
@@ -117,16 +182,16 @@ body {
 
 /* iOS 26 Liquid Glass Navbar */
 .nav-liquid-glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(35px) saturate(210%);
-  -webkit-backdrop-filter: blur(35px) saturate(210%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 
-    0 15px 50px rgba(0, 0, 0, 0.06),
-    inset 0 0 0 1px rgba(255, 255, 255, 1),
-    inset 0 2px 10px rgba(255, 255, 255, 0.8);
+    0 10px 30px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   border-radius: 1.25rem;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, backdrop-filter;
 }
 
 .nav-liquid-glass-scrolled {
@@ -299,8 +364,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  background-image: url("https://res.cloudinary.com/dzvk7v772/image/upload/v1698224504/noise_fdtx1v.png");
   pointer-events: none;
   z-index: 1;
 }
@@ -355,6 +420,11 @@ body {
 /* Page transitions */
 .page-enter {
   animation: pageEnter 0.6s ease-out;
+}
+
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
 }
 
 @keyframes pageEnter {

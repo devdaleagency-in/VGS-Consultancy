@@ -68,12 +68,13 @@ export default function AboutPage() {
           className="absolute inset-0 z-0"
         >
           <Image 
-            src="https://images.unsplash.com/photo-1541339907198-e08756ebafe1?auto=format&fit=crop&q=80&w=2000" 
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2000" 
             alt="VGS Global Academy" 
             fill
-            className="object-cover grayscale opacity-20"
+            className="object-cover grayscale opacity-40"
+            priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/10 via-white to-white" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/50 to-white" />
         </motion.div>
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
@@ -121,10 +122,10 @@ export default function AboutPage() {
           <div className="flex-1 flex items-center justify-center bg-gray-50/50 rounded-[4rem] border border-black/[0.03] p-20 group">
              <div className="relative w-full aspect-square max-w-[400px] group-hover:scale-105 transition-transform duration-700">
                 <Image 
-                  src="/logo3.png" 
+                  src="/vgsLogo.png" 
                   alt="VGS Global Logo" 
                   fill
-                  className="object-contain grayscale opacity-20 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
+                  className="object-contain grayscale opacity-40 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
                 />
              </div>
           </div>
@@ -177,7 +178,7 @@ export default function AboutPage() {
                 whileHover={{ y: -10 }}
               >
                 <div className="relative aspect-[4/5] rounded-[3.5rem] bg-gray-50 border border-black/[0.03] overflow-hidden mb-8 shadow-sm group-hover:shadow-3xl transition-all duration-700">
-                  <div className="absolute inset-0 flex items-center justify-center opacity-10 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100 p-16">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100 p-16">
                      <Image src={member.image} alt={member.name} width={400} height={500} className="object-contain" />
                   </div>
                   <div className="absolute top-8 right-8">

@@ -204,72 +204,77 @@ function ContactContent() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-elevated border border-gray-100"
+              className="premium-form-gradient p-8 md:p-12 rounded-[2.5rem] shadow-elevated border border-gray-100 relative overflow-hidden group"
             >
-              <h2 className="text-3xl font-heading font-bold text-dark mb-4">Book Expert Session</h2>
-              <p className="text-gray-500 mb-10">Fill out the form and our expert counselor will contact you within 24 hours.</p>
+              <h2 className="text-3xl font-heading font-black text-dark mb-4 relative z-10">Book Expert Session</h2>
+              <p className="text-gray-500 mb-10 font-bold relative z-10">Fill out the form and our expert counselor will contact you within 24 hours.</p>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-1">
-                    <label className="text-sm font-bold text-dark">Full Name</label>
+                    <label className="text-xs font-black uppercase tracking-widest text-dark/40 ml-2">Full Name</label>
                     <input 
                       {...register("name")}
                       placeholder="Enter your name" 
-                      className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.name ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all`}
+                      className={`w-full px-5 py-4 bg-white/50 backdrop-blur-sm rounded-2xl border ${errors.name ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all font-bold`}
                     />
-                    {errors.name && <p className="text-xs text-red-500 font-medium mt-1">{errors.name.message}</p>}
+                    {errors.name && <p className="text-xs text-red-500 font-bold mt-1 ml-2 uppercase tracking-tighter">{errors.name.message}</p>}
                   </div>
                   <div className="space-y-1">
-                    <label className="text-sm font-bold text-dark">Email Address</label>
-                    <input 
-                      {...register("email")}
-                      placeholder="Enter your email" 
-                      disabled={isEmailVerified}
-                      className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.email ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all ${isEmailVerified ? 'opacity-50' : ''}`}
-                    />
-                    {errors.email && <p className="text-xs text-red-500 font-medium mt-1">{errors.email.message}</p>}
-                    
-                    <OTPVerification 
-                      email={watch('email')} 
-                      onVerified={(val) => setIsEmailVerified(val)} 
-                    />
+                    <label className="text-xs font-black uppercase tracking-widest text-dark/40 ml-2">Email Address</label>
+                    <div className="relative">
+                      <input 
+                        {...register("email")}
+                        placeholder="Enter your email" 
+                        disabled={isEmailVerified}
+                        className={`w-full px-5 py-4 bg-white/50 backdrop-blur-sm rounded-2xl border ${errors.email ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all font-bold ${isEmailVerified ? 'opacity-50' : ''}`}
+                      />
+                      <OTPVerification 
+                        email={watch('email')} 
+                        onVerified={(val) => setIsEmailVerified(val)} 
+                      />
+                    </div>
+                    {errors.email && <p className="text-xs text-red-500 font-bold mt-1 ml-2 uppercase tracking-tighter">{errors.email.message}</p>}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-1">
-                    <label className="text-sm font-bold text-dark">Phone Number</label>
+                    <label className="text-xs font-black uppercase tracking-widest text-dark/40 ml-2">Phone Number</label>
                     <input 
                       {...register("phone")}
                       placeholder="+91" 
-                      className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.phone ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all`}
+                      className={`w-full px-5 py-4 bg-white/50 backdrop-blur-sm rounded-2xl border ${errors.phone ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all font-bold`}
                     />
-                    {errors.phone && <p className="text-xs text-red-500 font-medium mt-1">{errors.phone.message}</p>}
+                    {errors.phone && <p className="text-xs text-red-500 font-bold mt-1 ml-2 uppercase tracking-tighter">{errors.phone.message}</p>}
                   </div>
                   <div className="space-y-1">
-                    <label className="text-sm font-bold text-dark">Target Country</label>
-                    <select 
-                      {...register("country")}
-                      className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.country ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all appearance-none`}
-                    >
-                      <option value="">Select Country</option>
-                      <option value="UK">United Kingdom</option>
-                      <option value="USA">United States</option>
-                      <option value="Canada">Canada</option>
-                      <option value="Europe">Europe</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    {errors.country && <p className="text-xs text-red-500 font-medium mt-1">{errors.country.message}</p>}
+                    <label className="text-xs font-black uppercase tracking-widest text-dark/40 ml-2">Target Country</label>
+                    <div className="relative">
+                      <select 
+                        {...register("country")}
+                        className={`w-full px-5 py-4 bg-white/50 backdrop-blur-sm rounded-2xl border ${errors.country ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all appearance-none font-bold`}
+                      >
+                        <option value="">Select Country</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="USA">United States</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-dark/20 font-bold">↓</div>
+                    </div>
+                    {errors.country && <p className="text-xs text-red-500 font-bold mt-1 ml-2 uppercase tracking-tighter">{errors.country.message}</p>}
                   </div>
                 </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-1">
-                      <label className="text-sm font-bold text-dark">Course Interest</label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-1">
+                    <label className="text-xs font-black uppercase tracking-widest text-dark/40 ml-2">Course Interest</label>
+                    <div className="relative">
                       <select 
                         {...register("course")}
-                        className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.course ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all appearance-none`}
+                        className={`w-full px-5 py-4 bg-white/50 backdrop-blur-sm rounded-2xl border ${errors.course ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all appearance-none font-bold`}
                       >
                         <option value="">Select Category</option>
                         <option value="CS">Computer Science & IT</option>
@@ -279,14 +284,17 @@ function ContactContent() {
                         <option value="Arts">Arts & Humanities</option>
                         <option value="None">Not Applicable</option>
                       </select>
-                      {errors.course && <p className="text-xs text-red-500 font-medium mt-1">{errors.course.message}</p>}
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-dark/20 font-bold">↓</div>
                     </div>
+                    {errors.course && <p className="text-xs text-red-500 font-bold mt-1 ml-2 uppercase tracking-tighter">{errors.course.message}</p>}
+                  </div>
 
-                    <div className="space-y-1">
-                      <label className="text-sm font-bold text-dark">Visa Type</label>
+                  <div className="space-y-1">
+                    <label className="text-xs font-black uppercase tracking-widest text-dark/40 ml-2">Visa Type</label>
+                    <div className="relative">
                       <select 
                         {...register("visaType")}
-                        className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.visaType ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all appearance-none`}
+                        className={`w-full px-5 py-4 bg-white/50 backdrop-blur-sm rounded-2xl border ${errors.visaType ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all appearance-none font-bold`}
                       >
                         <option value="">Select Visa Type</option>
                         <option value="Student">Student Visa</option>
@@ -294,19 +302,21 @@ function ContactContent() {
                         <option value="Visit">Visit Visa</option>
                         <option value="PR">Permanent Residency</option>
                       </select>
-                      {errors.visaType && <p className="text-xs text-red-500 font-medium mt-1">{errors.visaType.message}</p>}
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-dark/20 font-bold">↓</div>
                     </div>
+                    {errors.visaType && <p className="text-xs text-red-500 font-bold mt-1 ml-2 uppercase tracking-tighter">{errors.visaType.message}</p>}
                   </div>
+                </div>
 
                 <div className="space-y-1">
-                  <label className="text-sm font-bold text-dark">Your Message</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-dark/40 ml-2">Your Message</label>
                   <textarea 
                     {...register("message")}
                     rows={4} 
                     placeholder="Tell us about your background and goals..." 
-                    className={`w-full px-5 py-4 bg-gray-50 rounded-2xl border ${errors.message ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all resize-none`}
+                    className={`w-full px-5 py-4 bg-white/50 backdrop-blur-sm rounded-2xl border ${errors.message ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all resize-none font-bold`}
                   />
-                  {errors.message && <p className="text-xs text-red-500 font-medium mt-1">{errors.message.message}</p>}
+                  {errors.message && <p className="text-xs text-red-500 font-bold mt-1 ml-2 uppercase tracking-tighter">{errors.message.message}</p>}
                 </div>
 
                 <motion.button
@@ -314,8 +324,8 @@ function ContactContent() {
                   whileTap={{ scale: isEmailVerified ? 0.98 : 1 }}
                   type="submit"
                   disabled={isSubmitting || !isEmailVerified}
-                  className={`w-full py-5 text-white rounded-2xl font-bold text-lg shadow-glow transition-all flex items-center justify-center gap-3 relative overflow-hidden ${
-                    isSubmitting ? 'bg-primary-600' : isSuccess ? 'bg-green-500' : isEmailVerified ? 'bg-primary' : 'bg-gray-400 cursor-not-allowed opacity-50'
+                  className={`w-full py-5 text-white rounded-2xl font-black text-lg shadow-glow transition-all flex items-center justify-center gap-3 relative overflow-hidden ${
+                    isSubmitting ? 'bg-primary/80' : isSuccess ? 'bg-green-500' : isEmailVerified ? 'bg-primary' : 'bg-gray-300 cursor-not-allowed opacity-50'
                   }`}
                 >
                   <AnimatePresence mode="wait">

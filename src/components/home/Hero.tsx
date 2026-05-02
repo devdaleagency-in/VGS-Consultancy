@@ -62,12 +62,11 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-sm h-48 md:max-w-2xl md:h-64 flex items-center justify-center">
               <Image 
-                src="/vgs new logo.png" 
+                src="/vgsLogo.png" 
                 alt="VGS Logo" 
-                width={1800} 
-                height={1800} 
-                quality={100}
-                className="object-contain"
+                width={200} 
+                height={200} 
+                className="w-full h-full object-contain transition-transform duration-700"
                 priority
               />
             </div>

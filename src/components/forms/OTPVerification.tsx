@@ -121,7 +121,7 @@ export default function OTPVerification({ email, onVerified }: OTPVerificationPr
                 value={otp}
                 onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
                 placeholder="000000"
-                className="w-full px-4 py-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all font-black text-center text-base tracking-[0.3em] outline-none h-[50px]"
+                className="w-full px-4 py-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all font-black text-center text-base tracking-[0.3em] outline-none h-[50px] text-dark"
               />
             </div>
             <div className="flex gap-2 shrink-0">

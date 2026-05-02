@@ -2,175 +2,147 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-const services = [
-  {
-    title: "Course Selection",
-    desc: "We analyze your academic background and interests to suggest the most suitable courses that align with your career goals.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    ),
-    features: ["Personalized Profile Analysis", "Career Outcome Research", "Curriculum Comparison", "Future Industry Trends"]
-  },
-  {
-    title: "University Shortlisting",
-    desc: "Using advanced data and latest rankings, we create a balanced list of universities including ambitious, target, and safe options.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-    features: ["Global Rankings Analysis", "Tuition Fee Comparison", "Scholarship Probability", "Location & Networking"]
-  },
-  {
-    title: "Application Support",
-    desc: "Our expert editors help you draft winning Statements of Purpose (SOP) and organize your Letters of Recommendation (LOR).",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-      </svg>
-    ),
-    features: ["Expert SOP Editing", "LOR Drafting Guidance", "Resume Optimization", "Interview Preparation"]
-  },
-  {
-    title: "Scholarship Guidance",
-    desc: "We help you identify and apply for various merit-based and need-based scholarships, reducing your financial burden.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    features: ["Global Database Access", "Drafting Essays", "External Funding Sources", "Bursary Applications"]
-  },
-  {
-    title: "Education Loan Support",
-    desc: "We provide specialized assistance in identifying and securing the best education loans with competitive interest rates for your international studies.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-    features: ["Bank Comparison Analysis", "Documentation Assistance", "Fast-track Processing", "Flexible Repayment Plans"]
-  },
-  {
-    title: "Visa Assistance",
-    desc: "Our high success rate is due to our meticulous document verification and comprehensive mock interview sessions.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    features: ["Document Verification", "Financial Proof Guidance", "Mock Interviews", "Status Tracking"]
-  },
-  {
-    title: "Post-Arrival Support",
-    desc: "We don't just stop at the visa. We help you find accommodation, insurance, and airport transfers to start your life abroad smoothly.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-      </svg>
-    ),
-    features: ["Accommodation Search", "Bank Account Setup", "Local Networking", "Travel Insurance"]
-  },
-  {
-    title: "Work Permit Visa",
-    desc: "Launch your international career with our specialized work permit assistance. We guide professionals through the complex legalities of securing employment visas in global markets.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    features: ["Skilled Worker Pathways", "H-1B & L-1 Support (USA)", "LMIA & COS Assistance", "Post-Study Work Transition"]
-  },
-  {
-    title: "Visit Visa",
-    desc: "Explore global destinations for leisure or business with our streamlined visit visa services. We handle the documentation stress so you can focus on your journey.",
-    icon: (
-      <svg className="w-48 h-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    features: ["Tourist & Business Visas", "Family Visit Support", "Hotel & Flight Bookings", "Personalized Cover Letters"]
-  }
-];
+import { 
+  BookOpen, 
+  GraduationCap, 
+  FileText, 
+  Award, 
+  Landmark, 
+  ShieldCheck, 
+  Home, 
+  Briefcase, 
+  Plane 
+} from 'lucide-react';
 
 export default function ServicesPage() {
   return (
-    <div className="pt-24 min-h-screen bg-white">
-      <section className="py-20 bg-primary overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light opacity-90" />
+    <div className="pt-24 min-h-screen relative overflow-hidden">
+      {/* Enhanced Animated Gradient Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(-45deg,#f0f7ff,#f8fafc,#eef2ff,#ffffff)] bg-[length:400%_400%] animate-gradient-shift z-0" />
+      
+      {/* Dynamic Atmospheric Glows */}
+      <motion.div
+        animate={{
+          x: [0, 150, 0],
+          y: [0, 80, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[140px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          x: [0, -150, 0],
+          y: [0, -80, 0],
+          scale: [1.2, 1, 1.2],
+        }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-accent-gold/10 rounded-full blur-[140px] pointer-events-none"
+      />
+
+      <section className="py-24 md:py-32 bg-primary overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light opacity-95" />
         <div className="max-w-[1400px] mx-auto px-4 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8"
+          >
+             <span className="text-white font-black tracking-[0.3em] uppercase text-[10px]">Premium Academic Solutions</span>
+          </motion.div>
+          
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-heading font-extrabold text-white mb-6"
+            className="text-5xl md:text-7xl font-heading font-black text-white mb-8 tracking-tighter"
           >
-            Our Expert <span className="text-dark/30 italic font-accent">Services</span>
+            Expert <span className="text-white/40 italic font-accent tracking-normal">Global Services</span>
           </motion.h1>
+          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-white/80 max-w-3xl mx-auto"
+            className="text-xl text-white/80 max-w-3xl mx-auto font-medium leading-relaxed"
           >
-            End-to-end support tailored for your success. From the first spark of interest to your first day on campus.
+            Strategic end-to-end support tailored for your global success. From initial profiling to university transition.
           </motion.p>
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24 relative z-10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-32">
+          <div className="space-y-40">
             {services.map((service, i) => (
               <motion.div
                 key={i}
-                id={service.title.toLowerCase().replace(/\s+/g, '-')}
+                id={service.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className={`flex flex-col lg:items-center gap-12 pt-20 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                className={`flex flex-col lg:items-center gap-16 md:gap-24 scroll-mt-56 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
               >
-                {/* Visual */}
+                {/* Visual Section */}
                 <div className="w-full lg:w-1/2">
-                   <div className="relative aspect-video rounded-3xl bg-gray-50 flex items-center justify-center p-12 overflow-hidden group">
-                      <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                      <div className="relative z-10 group-hover:scale-110 transition-transform duration-500 text-primary">
+                   <div className="relative aspect-video rounded-[3rem] bg-white shadow-2xl flex items-center justify-center p-16 overflow-hidden group border border-gray-100">
+                      {/* Interactive Background Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gray-50/50 to-gray-100/30 group-hover:opacity-50 transition-opacity" />
+                      
+                      <motion.div 
+                        animate={{ 
+                          y: [0, -15, 0],
+                          rotate: [0, 5, 0, -5, 0],
+                          scale: [1, 1.05, 1]
+                        }}
+                        transition={{ 
+                          duration: 8, 
+                          repeat: Infinity, 
+                          ease: "easeInOut" 
+                        }}
+                        className="relative z-10"
+                      >
                         {service.icon}
-                      </div>
-                      <div className="absolute bottom-10 right-10 flex gap-2">
-                         <div className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary font-bold">{i + 1}</div>
+                      </motion.div>
+                      
+                      {/* Step Indicator */}
+                      <div className="absolute top-10 left-10">
+                         <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-dark/20 font-black text-xl">
+                           0{i + 1}
+                         </div>
                       </div>
                    </div>
                 </div>
 
-                {/* Content */}
-                <div className="w-full lg:w-1/2 space-y-8">
-                   <h2 className="text-4xl font-heading font-extrabold text-dark">{service.title}</h2>
-                   <p className="text-xl text-gray-500 leading-relaxed">{service.desc}</p>
+                {/* Content Section */}
+                <div className="w-full lg:w-1/2 space-y-10">
+                   <div className="space-y-4">
+                     <h2 className="text-4xl md:text-5xl font-heading font-black text-dark tracking-tight leading-none">{service.title}</h2>
+                     <div className="w-20 h-1.5 bg-primary rounded-full" />
+                   </div>
                    
-                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <p className="text-xl text-gray-500 leading-relaxed font-medium">{service.desc}</p>
+                   
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {service.features.map((feature, j) => (
-                        <div key={j} className="flex items-center gap-3">
-                           <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
-                              <svg className="w-3 h-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div key={j} className="flex items-center gap-4 group/item">
+                           <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover/item:bg-primary transition-colors">
+                              <svg className="w-5 h-5 text-primary group-hover/item:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                               </svg>
                            </div>
-                           <span className="text-gray-600 font-medium">{feature}</span>
+                           <span className="text-gray-700 font-bold group-hover/item:text-primary transition-colors">{feature}</span>
                         </div>
                       ))}
                    </div>
 
-                   <div className="pt-6">
+                   <div className="pt-8">
                       <Link 
                         href="/contact"
-                         className="inline-flex items-center gap-3 px-8 py-4 bg-dark text-white hover:bg-primary rounded-2xl font-bold transition-all shadow-lg hover:shadow-primary/20"
+                         className="inline-flex items-center gap-4 px-10 py-5 bg-dark text-white hover:bg-primary rounded-2xl font-black transition-all shadow-2xl hover:shadow-primary/30 group/btn"
                       >
-                         Interested in this Service?
-                         <span>→</span>
+                         Start Your Journey
+                         <span className="group-hover/btn:translate-x-2 transition-transform">→</span>
                       </Link>
                    </div>
                 </div>
@@ -180,18 +152,103 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Global FAQ Mini Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-extrabold text-dark mb-12">Still Have Questions?</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-             <Link href="/contact" className="px-8 py-4 bg-primary text-white rounded-xl font-bold shadow-lg">Talk to Counselor</Link>
-             <Link href="/faq" className="px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold flex items-center gap-2">
-                Visit FAQ 📖
-             </Link>
+      {/* Modern Contact CTA */}
+      <section className="py-32 relative">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="bg-dark rounded-[4rem] p-12 md:p-20 text-center relative overflow-hidden border border-white/5 shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
+            
+            <h2 className="text-4xl md:text-5xl font-heading font-black text-white mb-8 relative z-10 leading-tight">
+              Ready to Accelerate Your <br />
+              <span className="text-primary italic font-accent tracking-normal">Academic Future?</span>
+            </h2>
+            
+            <div className="flex flex-wrap justify-center gap-6 relative z-10">
+               <Link href="/contact" className="px-12 py-5 bg-primary text-white rounded-2xl font-black shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
+                 Free Consultation
+               </Link>
+               <Link href="/faq" className="px-12 py-5 bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-2xl font-black hover:bg-white/20 transition-all">
+                 Read FAQ
+               </Link>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
+
+const services = [
+  {
+    id: "course-selection",
+    title: "Course Selection",
+    desc: "We analyze your academic background and interests to suggest the most suitable courses that align with your career goals.",
+    icon: <BookOpen className="w-24 h-24 md:w-32 md:h-32 text-blue-600" />,
+    features: ["Personalized Profile Analysis", "Career Outcome Research", "Curriculum Comparison", "Future Industry Trends"],
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "university-shortlisting",
+    title: "University Shortlisting",
+    desc: "Using advanced data and latest rankings, we create a balanced list of universities including ambitious, target, and safe options.",
+    icon: <GraduationCap className="w-24 h-24 md:w-32 md:h-32 text-emerald-600" />,
+    features: ["Global Rankings Analysis", "Tuition Fee Comparison", "Scholarship Probability", "Location & Networking"],
+    image: "https://images.unsplash.com/photo-1498243639359-2830cbd75950?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "application-support",
+    title: "Application Support",
+    desc: "Our expert editors help you draft winning Statements of Purpose (SOP) and organize your Letters of Recommendation (LOR).",
+    icon: <FileText className="w-24 h-24 md:w-32 md:h-32 text-orange-600" />,
+    features: ["Expert SOP Editing", "LOR Drafting Guidance", "Resume Optimization", "Interview Preparation"],
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "scholarship-guidance",
+    title: "Scholarship Guidance",
+    desc: "We help you identify and apply for various merit-based and need-based scholarships, reducing your financial burden.",
+    icon: <Award className="w-24 h-24 md:w-32 md:h-32 text-purple-600" />,
+    features: ["Global Database Access", "Drafting Essays", "External Funding Sources", "Bursary Applications"],
+    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "education-loan-support",
+    title: "Education Loan Support",
+    desc: "We provide specialized assistance in identifying and securing the best education loans with competitive interest rates for your international studies.",
+    icon: <Landmark className="w-24 h-24 md:w-32 md:h-32 text-red-600" />,
+    features: ["Bank Comparison Analysis", "Documentation Assistance", "Fast-track Processing", "Flexible Repayment Plans"],
+    image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "visa-assistance",
+    title: "Visa Assistance",
+    desc: "Our high success rate is due to our meticulous document verification and comprehensive mock interview sessions.",
+    icon: <ShieldCheck className="w-24 h-24 md:w-32 md:h-32 text-cyan-600" />,
+    features: ["Document Verification", "Financial Proof Guidance", "Mock Interviews", "Status Tracking"],
+    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "post-arrival-support",
+    title: "Post-Arrival Support",
+    desc: "We don't just stop at the visa. We help you find accommodation, insurance, and airport transfers to start your life abroad smoothly.",
+    icon: <Home className="w-24 h-24 md:w-32 md:h-32 text-indigo-600" />,
+    features: ["Accommodation Search", "Bank Account Setup", "Local Networking", "Travel Insurance"],
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "work-permit-visa",
+    title: "Work Permit Visa",
+    desc: "Launch your international career with our specialized work permit assistance. We guide professionals through the complex legalities of securing employment visas in global markets.",
+    icon: <Briefcase className="w-24 h-24 md:w-32 md:h-32 text-rose-600" />,
+    features: ["Skilled Worker Pathways", "H-1B & L-1 Support (USA)", "LMIA & COS Assistance", "Post-Study Work Transition"],
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    id: "visit-visa",
+    title: "Visit Visa",
+    desc: "Explore global destinations for leisure or business with our streamlined visit visa services. We handle the documentation stress so you can focus on your journey.",
+    icon: <Plane className="w-24 h-24 md:w-32 md:h-32 text-sky-600" />,
+    features: ["Tourist & Business Visas", "Family Visit Support", "Hotel & Flight Bookings", "Personalized Cover Letters"],
+    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1000"
+  }
+];

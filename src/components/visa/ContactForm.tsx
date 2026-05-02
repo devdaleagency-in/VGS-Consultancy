@@ -98,101 +98,111 @@ export default function ContactForm({ defaultCountry = '', defaultVisaType = '',
   };
 
   return (
-    <div className={`bg-white ${isCompact ? 'px-3 py-6 md:p-8' : 'px-4 py-8 md:p-12'} rounded-[1.25rem] md:rounded-[2.5rem] shadow-elevated border border-gray-100`}>
-      <h2 className={`${isCompact ? 'text-2xl' : 'text-3xl'} font-heading font-bold text-dark mb-4`}>Book Expert Session</h2>
-      <p className="text-gray-500 mb-8 text-sm">Fill out the form and our expert counselor will contact you within 24 hours.</p>
+    <div className={`premium-form-gradient ${isCompact ? 'px-3 py-6 md:p-8' : 'px-4 py-8 md:p-12'} rounded-[1.25rem] md:rounded-[2.5rem] shadow-elevated border border-gray-100 relative overflow-hidden group`}>
+      <h2 className={`${isCompact ? 'text-2xl' : 'text-3xl'} font-heading font-black text-dark mb-4 relative z-10`}>Book Expert Session</h2>
+      <p className="text-gray-500 mb-8 text-sm font-bold relative z-10">Fill out the form and our expert counselor will contact you within 24 hours.</p>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label className="text-[10px] font-black uppercase tracking-widest text-dark/60 ml-2">Full Name</label>
+            <label className="text-[10px] font-black uppercase tracking-widest text-dark/40 ml-2">Full Name</label>
             <input 
               {...register("name")}
               placeholder="Your Name" 
-              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.name ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all text-sm`}
+              className={`w-full px-5 py-3 bg-white/50 backdrop-blur-sm rounded-xl border ${errors.name ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all text-sm font-bold`}
             />
           </div>
           <div className="space-y-1">
-            <label className="text-[10px] font-black uppercase tracking-widest text-dark/60 ml-2">Email</label>
-            <input 
-              {...register("email")}
-              placeholder="email@example.com" 
-              disabled={isEmailVerified}
-              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.email ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all text-sm ${isEmailVerified ? 'opacity-50' : ''}`}
-            />
-            {errors.email && <p className="text-red-500 text-[10px] ml-2 font-bold">{errors.email.message}</p>}
-            
-            <OTPVerification 
-              email={watch('email')} 
-              onVerified={(val) => setIsEmailVerified(val)} 
-            />
+            <label className="text-[10px] font-black uppercase tracking-widest text-dark/40 ml-2">Email</label>
+            <div className="relative">
+              <input 
+                {...register("email")}
+                placeholder="email@example.com" 
+                disabled={isEmailVerified}
+                className={`w-full px-5 py-3 bg-white/50 backdrop-blur-sm rounded-xl border ${errors.email ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all text-sm font-bold ${isEmailVerified ? 'opacity-50' : ''}`}
+              />
+              <OTPVerification 
+                email={watch('email')} 
+                onVerified={(val) => setIsEmailVerified(val)} 
+              />
+            </div>
+            {errors.email && <p className="text-red-500 text-[10px] ml-2 font-black uppercase tracking-tighter mt-1">{errors.email.message}</p>}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label className="text-[10px] font-black uppercase tracking-widest text-dark/60 ml-2">Phone</label>
+            <label className="text-[10px] font-black uppercase tracking-widest text-dark/40 ml-2">Phone</label>
             <input 
               {...register("phone")}
               placeholder="+91" 
-              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.phone ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all text-sm`}
+              className={`w-full px-5 py-3 bg-white/50 backdrop-blur-sm rounded-xl border ${errors.phone ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all text-sm font-bold`}
             />
           </div>
           <div className="space-y-1">
-            <label className="text-[10px] font-black uppercase tracking-widest text-dark/60 ml-2">Target Country</label>
-            <select 
-              {...register("country")}
-              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.country ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all appearance-none text-sm`}
-            >
-              <option value="">Select Country</option>
-              <option value="UK">United Kingdom</option>
-              <option value="USA">United States</option>
-              <option value="Canada">Canada</option>
-              <option value="Europe">Europe</option>
-              <option value="Australia">Australia</option>
-              <option value="Other">Other</option>
-            </select>
+            <label className="text-[10px] font-black uppercase tracking-widest text-dark/40 ml-2">Target Country</label>
+            <div className="relative">
+              <select 
+                {...register("country")}
+                className={`w-full px-5 py-3 bg-white/50 backdrop-blur-sm rounded-xl border ${errors.country ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all appearance-none text-sm font-bold`}
+              >
+                <option value="">Select Country</option>
+                <option value="UK">United Kingdom</option>
+                <option value="USA">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="Europe">Europe</option>
+                <option value="Australia">Australia</option>
+                <option value="Other">Other</option>
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-dark/20 font-bold">↓</div>
+            </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label className="text-[10px] font-black uppercase tracking-widest text-dark/60 ml-2">Interest</label>
-            <select 
-              {...register("course")}
-              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.course ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all appearance-none text-sm`}
-            >
-              <option value="">Select Category</option>
-              <option value="CS">IT & Software</option>
-              <option value="Biz">Business</option>
-              <option value="Eng">Engineering</option>
-              <option value="Med">Healthcare</option>
-              <option value="None">Not Applicable</option>
-            </select>
+            <label className="text-[10px] font-black uppercase tracking-widest text-dark/40 ml-2">Interest</label>
+            <div className="relative">
+              <select 
+                {...register("course")}
+                className={`w-full px-5 py-3 bg-white/50 backdrop-blur-sm rounded-xl border ${errors.course ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all appearance-none text-sm font-bold`}
+              >
+                <option value="">Select Category</option>
+                <option value="CS">IT & Software</option>
+                <option value="Biz">Business</option>
+                <option value="Eng">Engineering</option>
+                <option value="Med">Healthcare</option>
+                <option value="None">Not Applicable</option>
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-dark/20 font-bold">↓</div>
+            </div>
           </div>
 
           <div className="space-y-1">
-            <label className="text-[10px] font-black uppercase tracking-widest text-dark/60 ml-2">Visa Type</label>
-            <select 
-              {...register("visaType")}
-              className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.visaType ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all appearance-none text-sm`}
-            >
-              <option value="">Select Visa Type</option>
-              <option value="Student">Student Visa</option>
-              <option value="Work">Work Visa</option>
-              <option value="Visit">Visit Visa</option>
-              <option value="PR">PR Pathway</option>
-            </select>
+            <label className="text-[10px] font-black uppercase tracking-widest text-dark/40 ml-2">Visa Type</label>
+            <div className="relative">
+              <select 
+                {...register("visaType")}
+                className={`w-full px-5 py-3 bg-white/50 backdrop-blur-sm rounded-xl border ${errors.visaType ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all appearance-none text-sm font-bold`}
+              >
+                <option value="">Select Visa Type</option>
+                <option value="Student">Student Visa</option>
+                <option value="Work">Work Visa</option>
+                <option value="Visit">Visit Visa</option>
+                <option value="PR">PR Pathway</option>
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-dark/20 font-bold">↓</div>
+            </div>
           </div>
         </div>
 
         <div className="space-y-1">
-          <label className="text-[10px] font-black uppercase tracking-widest text-dark/60 ml-2">Message</label>
+          <label className="text-[10px] font-black uppercase tracking-widest text-dark/40 ml-2">Message</label>
           <textarea 
             {...register("message")}
             rows={isCompact ? 2 : 3} 
             placeholder="Tell us your goals..." 
-            className={`w-full px-5 py-3 bg-gray-50 rounded-xl border ${errors.message ? 'border-red-400' : 'border-transparent'} focus:border-primary focus:bg-white outline-none transition-all resize-none text-sm`}
+            className={`w-full px-5 py-3 bg-white/50 backdrop-blur-sm rounded-xl border ${errors.message ? 'border-red-400' : 'border-gray-200'} focus:border-primary focus:bg-white text-dark outline-none transition-all resize-none text-sm font-bold`}
           />
         </div>
 
@@ -201,8 +211,8 @@ export default function ContactForm({ defaultCountry = '', defaultVisaType = '',
           whileTap={{ scale: isEmailVerified ? 0.98 : 1 }}
           type="submit"
           disabled={isSubmitting || !isEmailVerified}
-          className={`w-full py-4 text-white rounded-xl font-bold text-sm uppercase tracking-widest shadow-glow transition-all flex items-center justify-center gap-3 relative overflow-hidden ${
-            isSubmitting ? 'bg-primary-600' : isSuccess ? 'bg-green-500' : isEmailVerified ? 'bg-primary' : 'bg-gray-400 cursor-not-allowed opacity-50'
+          className={`w-full py-4 text-white rounded-xl font-black text-sm uppercase tracking-widest shadow-glow transition-all flex items-center justify-center gap-3 relative overflow-hidden ${
+            isSubmitting ? 'bg-primary/80' : isSuccess ? 'bg-green-500' : isEmailVerified ? 'bg-primary' : 'bg-gray-300 cursor-not-allowed opacity-50'
           }`}
         >
           <AnimatePresence mode="wait">

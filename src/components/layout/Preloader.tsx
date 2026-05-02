@@ -89,11 +89,11 @@ export default function Preloader() {
             >
                <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-white flex items-center justify-center p-3 shadow-glow-primary overflow-hidden">
                   <Image 
-                    src="/logo3.png" 
+                    src="/vgsLogo.png" 
                     alt="VGS Logo" 
                     width={100} 
                     height={100} 
-                    className="object-contain scale-110"
+                    className="object-contain scale-110" 
                     priority
                   />
                </div>

@@ -210,8 +210,8 @@ export default function AdminDashboard() {
       
       <div className="md:hidden bg-dark text-white p-5 flex justify-between items-center sticky top-0 z-[60] shadow-2xl border-b border-white/5">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center p-1.5 shadow-glow shadow-primary/20 overflow-hidden">
-            <img src="/logo3.png" alt="VGS" className="w-full h-full object-contain scale-125" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center p-1.5 shadow-glow shadow-primary/20 overflow-hidden">
+            <img src="/vgsLogo.png" alt="VGS" className="w-full h-full object-contain scale-125" />
           </div>
           <div className="flex flex-col">
             <span className="font-heading font-black text-sm uppercase tracking-tighter text-white leading-none">VGS</span>
@@ -255,7 +255,7 @@ export default function AdminDashboard() {
         <div>
           <div className="hidden md:flex items-center gap-4 mb-16">
             <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center p-2 shadow-glow shadow-primary/10 overflow-hidden">
-              <img src="/logo3.png" alt="VGS Logo" className="w-full h-full object-contain scale-125" />
+              <img src="/vgsLogo.png" alt="VGS Logo" className="w-full h-full object-contain scale-125" />
             </div>
             <div>
                <h2 className="font-heading font-black text-2xl leading-tight text-white tracking-tighter">VGS <br/> ADMIN</h2>

@@ -11,6 +11,8 @@ const footerLinks = {
     { name: 'Application Support', href: '/services#application-support' },
     { name: 'Scholarship Guidance', href: '/services#scholarship-guidance' },
     { name: 'Visa Assistance', href: '/services#visa-assistance' },
+    { name: 'Work Permit Visa', href: '/services#work-permit-visa' },
+    { name: 'Visit Visa', href: '/services#visit-visa' },
     { name: 'Post-Arrival Support', href: '/services#post-arrival-support' },
   ],
   destinations: [
@@ -52,10 +54,10 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center p-1 shadow-lg overflow-hidden border border-white/10">
                 <Image 
-                  src="/logo3.png" 
+                  src="/vgsLogo.png" 
                   alt="VGS Logo" 
-                  width={40} 
-                  height={40} 
+                  width={140} 
+                  height={140} 
                   className="object-contain"
                 />
               </div>

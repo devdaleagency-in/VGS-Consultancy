@@ -151,7 +151,7 @@ export default function VisaPageLayout({ title, fullName, banner, description, s
             {/* Company Information */}
             <div className="space-y-16">
               <div>
-                <img src="/vgs new logo.png" alt="VGS Logo" className="h-24 md:h-32 object-contain mb-10" />
+                <img src="/vgsLogo.png" alt="VGS Logo" className="h-24 md:h-32 object-contain mb-10" />
                 <h2 className="text-4xl md:text-5xl font-heading font-black text-dark mb-8 leading-tight">
                   Your Global Future <br/> Starts <span className="text-primary italic font-accent">Here.</span>
                 </h2>

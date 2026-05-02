@@ -38,7 +38,7 @@ export default function Navbar() {
 
               <div className="relative w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-2xl border border-black/5 overflow-hidden group-hover:scale-110 transition-transform duration-500">
                 <Image
-                  src="/vgs new logo.png"
+                  src="/vgsLogo.png"
                   alt="VGS Logo"
                   width={80}
                   height={80}
